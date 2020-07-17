@@ -10,13 +10,13 @@ pkill lvgl
 set -e -x
 
 # Build app
-cd wayland
 make
 
 # Make system folders writeable
 sudo mount -o remount,rw /
 
 # Copy app to File Manager folder
+cd wayland
 sudo cp lvgl /usr/share/click/preinstalled/.click/users/@all/com.ubuntu.filemanager
 sudo chown clickpkg:clickpkg /usr/share/click/preinstalled/.click/users/@all/com.ubuntu.filemanager/lvgl
 ls -l /usr/share/click/preinstalled/.click/users/@all/com.ubuntu.filemanager/lvgl

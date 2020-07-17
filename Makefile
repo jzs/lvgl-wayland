@@ -1,13 +1,21 @@
 # Build LVGL on PinePhone Ubuntu Touch
 
+# Define $(CSRCS)
 LVGL_DIR 	  := .
 LVGL_DIR_NAME := .
 include lvgl.mk
 
+WAYLAND_CSRCS := \
+	demo/lv_demo_widgets.c \
+	wayland/util.c \
+	wayland/texture.c
+
 CC      := gcc
+
 CCFLAGS := \
 	-g \
 	-I src/lv_core
+
 LDFLAGS := \
     -lwayland-client \
     -lwayland-server \
@@ -17,10 +25,11 @@ LDFLAGS := \
     /usr/lib/aarch64-linux-gnu/mesa-egl/libGLESv2.so.2 \
 	-Wl,-Map=lvgl.map \
 
-TARGETS:= lvgl
+TARGETS:= wayland/lvgl
 MAINS  := $(addsuffix .o, $(TARGETS) )
 OBJ    := \
 	$(CSRCS:.c=.o) \
+	$(WAYLAND_CSRCS:.c=.o) \
 	$(MAINS)
 DEPS   := lvgl.h
 
