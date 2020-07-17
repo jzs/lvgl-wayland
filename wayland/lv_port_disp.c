@@ -4,7 +4,7 @@
  */
 
  /*Copy this file as "lv_port_disp.c" and set this value to "1" to enable content*/
-#include <bits/stdint-uintn.h>
+//#include <bits/stdint-uintn.h>
 #if 1
 
 /*********************
