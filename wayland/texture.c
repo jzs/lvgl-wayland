@@ -48,6 +48,7 @@ void put_px(uint16_t x, uint16_t y, uint8_t r, uint8_t g, uint8_t b, uint8_t a) 
 }
 
 GLuint CreateTexture(void) {
+    puts("Create texture...");
     GLuint texId;
     glGenTextures ( 1, &texId );
     glBindTexture ( GL_TEXTURE_2D, texId );
@@ -75,6 +76,7 @@ GLuint CreateTexture(void) {
 //
 int Init(ESContext *esContext)
 {
+    puts("Init texture...");
     esContext->userData = malloc(sizeof(UserData));
     UserData *userData = esContext->userData;
     GLbyte vShaderStr[] =

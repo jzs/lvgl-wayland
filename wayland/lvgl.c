@@ -54,8 +54,17 @@ EGLContext egl_context;
 ////////////////////////////////////////////////////////////////////
 //  EGL
 
+static void render_widgets(void) {
+    lv_obj_t * btn = lv_btn_create(lv_scr_act(), NULL);     /*Add a button the current screen*/
+    lv_obj_set_pos(btn, 10, 10);                            /*Set its position*/
+    lv_obj_set_size(btn, 120, 50);                          /*Set its size*/
+
+    lv_obj_t * label = lv_label_create(btn, NULL);          /*Add a label to the button*/
+    lv_label_set_text(label, "Button");                     /*Set the labels text*/
+}
+
 /// Render the GLES2 display
-void render_display()
+static void render_display()
 {
     puts("Rendering display...");
     // glClearColor(1.0f, 0.0f, 1.0f, 1.0f); // Set background color to magenta and opaque
@@ -66,9 +75,11 @@ void render_display()
     lv_port_disp_init();
 
     //  Create widgets
-    lv_demo_widgets();
+    //  lv_demo_widgets();
+    render_widgets();
 
     //  Render widgets
+    puts("Handle task...");
     lv_task_handler();
 
     static ESContext esContext;
