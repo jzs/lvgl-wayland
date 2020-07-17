@@ -47,4 +47,10 @@ $(OBJ): %.o : %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CCFLAGS)
 
 $(TARGETS): % : $(filter-out $(MAINS), $(OBJ)) %.o
-	$(CC) -o $@ $(LIBS) $^ $(CCFLAGS) $(LDFLAGS)
+	$(CC) -o $@ \
+	-Wl,--start-group \
+	$(LIBS) \
+	$^ \
+	-Wl,--end-group \
+	$(CCFLAGS) \
+	$(LDFLAGS)
