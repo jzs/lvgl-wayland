@@ -8,7 +8,7 @@
 #include <assert.h>
 #include <EGL/egl.h>
 #include <GLES2/gl2.h>
-#include "../lv_conf.h"
+#include "../lvgl.h"
 #include "util.h"
 
 typedef struct
