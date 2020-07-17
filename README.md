@@ -8,7 +8,8 @@ Connect to PinePhone over SSH and run these commands...
 # Make system folders writeable
 sudo mount -o remount,rw /
 
-# Install GLES2 library
+# Install GDB debugger and GLES2 library
+sudo apt install gdb
 sudo apt install libgles2-mesa-dev
 
 # Download the source code
@@ -18,6 +19,15 @@ cd lvgl-wayland
 
 # Build the app
 make
+```
+
+## Run LVGL (LittleVGL) on PinePhone Ubuntu Touch
+
+Connect to PinePhone over SSH and run these commands...
+
+```bash
+cd lvgl-wayland
+./wayland/lvgl.sh
 ```
 
 TODO
