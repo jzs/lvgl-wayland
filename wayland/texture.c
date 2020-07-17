@@ -126,31 +126,30 @@ void Draw(ESContext *esContext)
     UserData *userData = esContext->userData;
     assert(userData != NULL);
 
+    float xOffset = 0.0;
     GLfloat vVertices[] = {
-        //0.0f * LV_SCALE_RES, 2.0f * LV_SCALE_RES, 0.0f,  // Position 0
-        -1.0f * LV_SCALE_RES, 1.0f * LV_SCALE_RES, 0.0f,  // Position 0
+        xOffset + -1.0f * LV_SCALE_RES, 1.0f * LV_SCALE_RES, 0.0f,  // Position 0
         //-0.5f, 0.5f, 0.0f,  // Position 0
         0.0f, 0.0f,         // TexCoord 0
 
-        //0.0f * LV_SCALE_RES, 0.0f * LV_SCALE_RES, 0.0f, // Position 1
-        -1.0f * LV_SCALE_RES, -1.0f * LV_SCALE_RES, 0.0f, // Position 1
+        xOffset + -1.0f * LV_SCALE_RES, -1.0f * LV_SCALE_RES, 0.0f, // Position 1
         //-0.5f, -0.5f, 0.0f, // Position 1
         0.0f, 1.0f,         // TexCoord 1
 
-        //2.0f * LV_SCALE_RES, 0.0f * LV_SCALE_RES, 0.0f,  // Position 2
-        1.0f * LV_SCALE_RES, -1.0f * LV_SCALE_RES, 0.0f,  // Position 2
+        xOffset + 1.0f * LV_SCALE_RES, -1.0f * LV_SCALE_RES, 0.0f,  // Position 2
         //0.5f, -0.5f, 0.0f,  // Position 2
         1.0f, 1.0f,         // TexCoord 2
 
-        //2.0f * LV_SCALE_RES, 2.0f * LV_SCALE_RES, 0.0f,   // Position 3
-        1.0f * LV_SCALE_RES, 1.0f * LV_SCALE_RES, 0.0f,   // Position 3
+        xOffset + 1.0f * LV_SCALE_RES, 1.0f * LV_SCALE_RES, 0.0f,   // Position 3
         //0.5f, 0.5f, 0.0f,   // Position 3
         1.0f, 0.0f          // TexCoord 3
     };
     GLushort indices[] = {0, 1, 2, 0, 2, 3};
 
     // Set the viewport
-    glViewport(0, 0, esContext->width, esContext->height);
+    glViewport(0, 0, 
+        esContext->width * LV_SCALE_RES, 
+        esContext->height * LV_SCALE_RES);
 
     // Clear the color buffer
     glClear(GL_COLOR_BUFFER_BIT);
