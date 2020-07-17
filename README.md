@@ -6,8 +6,9 @@ Connect to PinePhone over SSH and run these commands...
 
 ```bash
 cd ~
-git clone https://github.com/lvgl/lvgl-wayland
+git clone https://github.com/lupyuen/lvgl-wayland
 cd lvgl-wayland
+make
 ```
 
 TODO
@@ -15,6 +16,8 @@ TODO
 ## Extend LVGL to support Wayland EGL (OpenGLES2)
 
 LVGL doesn't support rendering to Wayland EGL (OpenGLES2) and SDL2 doesn't work on PinePhone with Ubuntu Touch. So we'll extend LVGL ourselves to support Wayland EGL.
+
+See https://github.com/lupyuen/pinephone-mir
 
 TODO
 
