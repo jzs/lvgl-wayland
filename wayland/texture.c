@@ -57,8 +57,8 @@ GLuint CreateTexture(void) {
         GL_TEXTURE_2D, 
         0,  //  Level
         GL_RGB, 
-        LV_HOR_RES_MAX,  //  Width
-        LV_VER_RES_MAX,  //  Height 
+        LV_HOR_RES_MAX * LV_SCALE_RES,  //  Width
+        LV_VER_RES_MAX * LV_SCALE_RES,  //  Height 
         0,  //  Format 
         GL_RGB, 
         GL_UNSIGNED_BYTE, 
@@ -127,23 +127,23 @@ void Draw(ESContext *esContext)
     assert(userData != NULL);
 
     GLfloat vVertices[] = {
-        0.0f * LV_SCALE_RES, 2.0f * LV_SCALE_RES, 0.0f,  // Position 0
-        //-1.0f * LV_SCALE_RES, 1.0f * LV_SCALE_RES, 0.0f,  // Position 0
+        //0.0f * LV_SCALE_RES, 2.0f * LV_SCALE_RES, 0.0f,  // Position 0
+        -1.0f * LV_SCALE_RES, 1.0f * LV_SCALE_RES, 0.0f,  // Position 0
         //-0.5f, 0.5f, 0.0f,  // Position 0
         0.0f, 0.0f,         // TexCoord 0
 
-        0.0f * LV_SCALE_RES, 0.0f * LV_SCALE_RES, 0.0f, // Position 1
-        //-1.0f * LV_SCALE_RES, -1.0f * LV_SCALE_RES, 0.0f, // Position 1
+        //0.0f * LV_SCALE_RES, 0.0f * LV_SCALE_RES, 0.0f, // Position 1
+        -1.0f * LV_SCALE_RES, -1.0f * LV_SCALE_RES, 0.0f, // Position 1
         //-0.5f, -0.5f, 0.0f, // Position 1
         0.0f, 1.0f,         // TexCoord 1
 
-        2.0f * LV_SCALE_RES, 0.0f * LV_SCALE_RES, 0.0f,  // Position 2
-        //1.0f * LV_SCALE_RES, -1.0f * LV_SCALE_RES, 0.0f,  // Position 2
+        //2.0f * LV_SCALE_RES, 0.0f * LV_SCALE_RES, 0.0f,  // Position 2
+        1.0f * LV_SCALE_RES, -1.0f * LV_SCALE_RES, 0.0f,  // Position 2
         //0.5f, -0.5f, 0.0f,  // Position 2
         1.0f, 1.0f,         // TexCoord 2
 
-        2.0f * LV_SCALE_RES, 2.0f * LV_SCALE_RES, 0.0f,   // Position 3
-        //1.0f * LV_SCALE_RES, 1.0f * LV_SCALE_RES, 0.0f,   // Position 3
+        //2.0f * LV_SCALE_RES, 2.0f * LV_SCALE_RES, 0.0f,   // Position 3
+        1.0f * LV_SCALE_RES, 1.0f * LV_SCALE_RES, 0.0f,   // Position 3
         //0.5f, 0.5f, 0.0f,   // Position 3
         1.0f, 0.0f          // TexCoord 3
     };
