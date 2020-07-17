@@ -61,6 +61,7 @@ void render_display()
     // glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
 
     ////
+    lv_init();
     lv_demo_widgets();
 
     static ESContext esContext;
