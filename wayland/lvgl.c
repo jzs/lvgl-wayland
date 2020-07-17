@@ -65,6 +65,7 @@ void render_display()
     lv_init();
     lv_port_disp_init();
     lv_demo_widgets();
+    lv_tick_inc(5);      /*Tell LVGL that 5 milliseconds were elapsed*/
 
     static ESContext esContext;
     esInitContext ( &esContext );
