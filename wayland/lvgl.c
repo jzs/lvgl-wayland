@@ -18,6 +18,8 @@
 #include <wayland-egl.h>
 #include <EGL/egl.h>
 #include <GLES2/gl2.h>
+#include "../lvconf.h"
+#include "../demo/lv_demo_widgets.h"
 #include "util.h"
 
 static void shm_format(void *data, struct wl_shm *wl_shm, uint32_t format);
@@ -40,8 +42,8 @@ struct wl_shm_listener shm_listener = {
     shm_format
 };
 
-int WIDTH = 480;
-int HEIGHT = 360;
+static int WIDTH = LV_HOR_RES_MAX;
+static int HEIGHT = LV_VER_RES_MAX;
 
 EGLDisplay egl_display;
 EGLConfig egl_conf;
@@ -59,6 +61,8 @@ void render_display()
     // glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
 
     ////
+    lv_demo_widgets();
+    
     static ESContext esContext;
     esInitContext ( &esContext );
     esContext.width = WIDTH;
