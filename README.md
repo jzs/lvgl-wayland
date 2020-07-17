@@ -30,7 +30,7 @@ cd lvgl-wayland
 ./wayland/lvgl.sh
 ```
 
-TODO
+Press `Ctrl-C` to stop the log display.
 
 ## Extend LVGL to support Wayland EGL (OpenGLES2)
 
