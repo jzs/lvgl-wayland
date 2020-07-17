@@ -7,6 +7,7 @@
 /*********************
  *      INCLUDES
  *********************/
+#include <stdio.h>
 #include "../lvgl.h"
 #include "lv_demo_widgets.h"
 
@@ -63,6 +64,7 @@ static lv_style_t style_box;
 
 void lv_demo_widgets(void)
 {
+    puts("Creating widgets...");
     tv = lv_tabview_create(lv_scr_act(), NULL);
 #if LV_USE_THEME_MATERIAL
     if(LV_THEME_DEFAULT_INIT == lv_theme_material_init) {

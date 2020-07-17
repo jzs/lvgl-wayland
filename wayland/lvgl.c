@@ -19,6 +19,7 @@
 #include <EGL/egl.h>
 #include <GLES2/gl2.h>
 #include "../lvgl.h"
+#include "lv_port_disp.h"
 #include "../demo/lv_demo_widgets.h"
 #include "util.h"
 
@@ -60,8 +61,9 @@ void render_display()
     // glClearColor(1.0f, 0.0f, 1.0f, 1.0f); // Set background color to magenta and opaque
     // glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
 
-    ////
+    ////    
     lv_init();
+    lv_port_disp_init();
     lv_demo_widgets();
 
     static ESContext esContext;
