@@ -1,5 +1,24 @@
+# LVGL Experimental Build for PinePhone Ubuntu Touch with Wayland EGL
+
+## Build LVGL (LittleVGL) on PinePhone Ubuntu Touch
+
+Connect to PinePhone over SSH and run these commands...
+
+```bash
+cd ~
+git clone https://github.com/lvgl/lvgl-wayland
+cd lvgl-wayland
+```
+
+TODO
+
+## Extend LVGL to support Wayland EGL (OpenGLES2)
+
+LVGL doesn't support rendering to Wayland EGL (OpenGLES2) and SDL2 doesn't work on PinePhone with Ubuntu Touch. So we'll extend LVGL ourselves to support Wayland EGL.
+
+TODO
+
 <h1 align="center"> LVGL - Light and Versatile Graphics Library</h1>
-<h2 align="center"> Experimental build for PinePhone Ubuntu Touch with Wayland EGL </h2>
 <p align="center">
 <a href="https://github.com/lvgl/lvgl/blob/master/LICENCE.txt"><img src="https://img.shields.io/badge/licence-MIT-blue.svg"></a>
 <a href="https://github.com/lvgl/lvgl/releases/tag/v7.0.0"><img src="https://img.shields.io/badge/version-7.1.0-blue.svg"></a>
