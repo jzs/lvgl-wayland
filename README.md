@@ -5,9 +5,18 @@
 Connect to PinePhone over SSH and run these commands...
 
 ```bash
+# Make system folders writeable
+sudo mount -o remount,rw /
+
+# Install GLES2 library
+sudo apt install libgles2-mesa-dev
+
+# Download the source code
 cd ~
 git clone https://github.com/lupyuen/lvgl-wayland
 cd lvgl-wayland
+
+# Build the app
 make
 ```
 

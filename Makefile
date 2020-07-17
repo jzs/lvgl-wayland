@@ -5,8 +5,17 @@ LVGL_DIR_NAME := .
 include lvgl.mk
 
 CC      := gcc
-CCFLAGS := -I src/lv_core
-LDFLAGS :=
+CCFLAGS := \
+	-g \
+	-I src/lv_core
+LDFLAGS := \
+    -lwayland-client \
+    -lwayland-server \
+    -lwayland-egl \
+    -L/usr/lib/aarch64-linux-gnu/mesa-egl \
+    -lEGL \
+    /usr/lib/aarch64-linux-gnu/mesa-egl/libGLESv2.so.2 \
+	-Wl,-Map=lvgl.map \
 
 TARGETS:= lvgl
 MAINS  := $(addsuffix .o, $(TARGETS) )
