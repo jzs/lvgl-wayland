@@ -61,13 +61,15 @@ void render_display()
     // glClearColor(1.0f, 0.0f, 1.0f, 1.0f); // Set background color to magenta and opaque
     // glClear(GL_COLOR_BUFFER_BIT);         // Clear the color buffer (background)
 
-    ////    
+    //  Init display
     lv_init();
     lv_port_disp_init();
+
+    //  Create widgets
     lv_demo_widgets();
-    for (int i = 0; i < 1000; i++) {
-        lv_tick_inc(5);      /*Tell LVGL that 5 milliseconds were elapsed*/
-    }
+
+    //  Render widgets
+    lv_task_handler();
 
     static ESContext esContext;
     esInitContext ( &esContext );
