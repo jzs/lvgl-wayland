@@ -47,38 +47,27 @@ void put_px(uint16_t x, uint16_t y, uint8_t r, uint8_t g, uint8_t b, uint8_t a) 
     pixels[i++] = b;  //  Blue
 }
 
-///
-// Create a simple 2x2 texture image with four different colors
-//
-GLuint CreateSimpleTexture2D()
-{
-    // Texture object handle
-    GLuint textureId;
+GLuint CreateTexture(void) {
+    GLuint texId;
+    glGenTextures ( 1, &texId );
+    glBindTexture ( GL_TEXTURE_2D, texId );
 
-    // Use tightly packed data
-    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-
-    // Generate a texture object
-    glGenTextures(1, &textureId);
-
-    // Bind the texture object
-    glBindTexture(GL_TEXTURE_2D, textureId);
-
-    // Load the texture
-    glTexImage2D(
+    glTexImage2D (
         GL_TEXTURE_2D, 
         0,  //  Level
         GL_RGB, 
         LV_HOR_RES_MAX,  //  Width
-        LV_VER_RES_MAX,  //  Height
-        0,  //  Border
-        GL_RGB, GL_UNSIGNED_BYTE, pixels);
-
-    // Set the filtering mode
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-    return textureId;
+        LV_VER_RES_MAX,  //  Height 
+        0,  //  Format 
+        GL_RGB, 
+        GL_UNSIGNED_BYTE, 
+        pixels 
+    );
+    glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+    glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+    glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE );
+    glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE );
+    return texId;
 }
 
 ///
@@ -118,7 +107,7 @@ int Init(ESContext *esContext)
     userData->samplerLoc = glGetUniformLocation(userData->programObject, "s_texture");
 
     // Load the texture
-    userData->textureId = CreateSimpleTexture2D();
+    userData->textureId = CreateTexture();
 
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     return GL_TRUE;
@@ -159,6 +148,7 @@ void Draw(ESContext *esContext)
     // Load the vertex position
     glVertexAttribPointer(userData->positionLoc, 3, GL_FLOAT,
                           GL_FALSE, 5 * sizeof(GLfloat), vVertices);
+
     // Load the texture coordinate
     glVertexAttribPointer(userData->texCoordLoc, 2, GL_FLOAT,
                           GL_FALSE, 5 * sizeof(GLfloat), &vVertices[3]);
@@ -173,6 +163,7 @@ void Draw(ESContext *esContext)
     // Set the sampler texture unit to 0
     glUniform1i(userData->samplerLoc, 0);
 
+    //  TODO
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices);
 }
 
