@@ -7,6 +7,7 @@ include lvgl.mk
 
 WAYLAND_CSRCS := \
 	demo/lv_demo_widgets.c \
+	wayland/lv_port_disp.c \
 	wayland/shader.c \
 	wayland/texture.c \
 	wayland/util.c

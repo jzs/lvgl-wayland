@@ -9,7 +9,7 @@
 /*********************
  *      INCLUDES
  *********************/
-#include "lv_port_disp_template.h"
+#include "lv_port_disp.h"
 
 /*********************
  *      DEFINES
@@ -101,7 +101,7 @@ void lv_port_disp_init(void)
 
     /*Set the resolution of the display*/
     disp_drv.hor_res = 480;
-    disp_drv.ver_res = 320;
+    disp_drv.ver_res = 640;
 
     /*Used to copy the buffer's content to the display*/
     disp_drv.flush_cb = disp_flush;
