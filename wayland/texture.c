@@ -127,20 +127,23 @@ void Draw(ESContext *esContext)
     assert(userData != NULL);
 
     float xOffset = 0.0;
+    float yOffset = 0.0;
+    float xScale = 1;
+    float yScale = 1;
     GLfloat vVertices[] = {
-        xOffset + -1.0f * LV_SCALE_RES, 1.0f * LV_SCALE_RES, 0.0f,  // Position 0
+        xOffset + -1.0f * xScale, yOffset + 1.0f * yScale, 0.0f,  // Position 0
         //-0.5f, 0.5f, 0.0f,  // Position 0
         0.0f, 0.0f,         // TexCoord 0
 
-        xOffset + -1.0f * LV_SCALE_RES, -1.0f * LV_SCALE_RES, 0.0f, // Position 1
+        xOffset + -1.0f * xScale, yOffset + -1.0f * yScale, 0.0f, // Position 1
         //-0.5f, -0.5f, 0.0f, // Position 1
         0.0f, 1.0f,         // TexCoord 1
 
-        xOffset + 1.0f * LV_SCALE_RES, -1.0f * LV_SCALE_RES, 0.0f,  // Position 2
+        xOffset + 1.0f * xScale, yOffset + -1.0f * yScale, 0.0f,  // Position 2
         //0.5f, -0.5f, 0.0f,  // Position 2
         1.0f, 1.0f,         // TexCoord 2
 
-        xOffset + 1.0f * LV_SCALE_RES, 1.0f * LV_SCALE_RES, 0.0f,   // Position 3
+        xOffset + 1.0f * xScale, yOffset + 1.0f * yScale, 0.0f,   // Position 3
         //0.5f, 0.5f, 0.0f,   // Position 3
         1.0f, 0.0f          // TexCoord 3
     };
