@@ -57,8 +57,8 @@ GLuint CreateTexture(void) {
         GL_TEXTURE_2D, 
         0,  //  Level
         GL_RGB, 
-        LV_HOR_RES_MAX * LV_SCALE_RES,  //  Width
-        LV_VER_RES_MAX * LV_SCALE_RES,  //  Height 
+        LV_HOR_RES_MAX,  //  Width
+        LV_VER_RES_MAX,  //  Height 
         0,  //  Format 
         GL_RGB, 
         GL_UNSIGNED_BYTE, 
