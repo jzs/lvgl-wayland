@@ -7,8 +7,8 @@ include lvgl.mk
 
 WAYLAND_CSRCS := \
 	demo/lv_demo_widgets.c \
-	wayland/texture.c
-	wayland/util.c \
+	wayland/texture.c \
+	wayland/util.c
 
 TARGETS:= wayland/lvgl
 
