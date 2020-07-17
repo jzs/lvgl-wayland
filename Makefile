@@ -10,6 +10,10 @@ WAYLAND_CSRCS := \
 	wayland/util.c \
 	wayland/texture.c
 
+TARGETS:= wayland/lvgl
+
+DEPS   := lvgl.h
+
 CC      := gcc
 
 CCFLAGS := \
@@ -25,13 +29,11 @@ LDFLAGS := \
     /usr/lib/aarch64-linux-gnu/mesa-egl/libGLESv2.so.2 \
 	-Wl,-Map=lvgl.map \
 
-TARGETS:= wayland/lvgl
 MAINS  := $(addsuffix .o, $(TARGETS) )
 OBJ    := \
+	$(MAINS) \
 	$(CSRCS:.c=.o) \
-	$(WAYLAND_CSRCS:.c=.o) \
-	$(MAINS)
-DEPS   := lvgl.h
+	$(WAYLAND_CSRCS:.c=.o)
 
 .PHONY: all clean
 
