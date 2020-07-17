@@ -20,8 +20,16 @@
  *====================*/
 
 /* Maximal horizontal and vertical resolution to support by the library.*/
-#define LV_HOR_RES_MAX          (720)
-#define LV_VER_RES_MAX          (1398)
+
+//  Actual Resolution
+//  #define LV_HOR_RES_MAX          (720)
+//  #define LV_VER_RES_MAX          (1398)
+//  #define LV_SCALE_RES            1
+
+//  Half Resolution
+#define LV_HOR_RES_MAX          (360)
+#define LV_VER_RES_MAX          (699)
+#define LV_SCALE_RES            2
 
 /* Color depth:
  * - 1:  1 byte per pixel
@@ -53,7 +61,7 @@
 /* Dot Per Inch: used to initialize default sizes.
  * E.g. a button with width = LV_DPI / 2 -> half inch wide
  * (Not so important, you can adjust it to modify default sizes and spaces)*/
-#define LV_DPI              50     /*[px]*/
+#define LV_DPI              96     /*[px]*/
 ////#define LV_DPI              130     /*[px]*/
 
 /* The the real width of the display changes some default values:

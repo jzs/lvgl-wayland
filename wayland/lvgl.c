@@ -138,8 +138,8 @@ create_opaque_region()
     assert(region != NULL);
 
     wl_region_add(region, 0, 0,
-                  WIDTH,
-                  HEIGHT);
+                  WIDTH * LV_SCALE_RES,
+                  HEIGHT * LV_SCALE_RES);
     wl_surface_set_opaque_region(surface, region);
 }
 
@@ -148,7 +148,8 @@ create_window()
 {
     puts("Creating window...");
     egl_window = wl_egl_window_create(surface,
-                                      WIDTH, HEIGHT);
+                                      WIDTH * LV_SCALE_RES, 
+                                      HEIGHT * LV_SCALE_RES);
     if (egl_window == EGL_NO_SURFACE)
     {
         fprintf(stderr, "Can't create egl window\n");
