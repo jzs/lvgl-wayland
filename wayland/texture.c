@@ -8,6 +8,7 @@
 #include <assert.h>
 #include <EGL/egl.h>
 #include <GLES2/gl2.h>
+#include "../lv_conf.h"
 #include "util.h"
 
 typedef struct
@@ -27,6 +28,25 @@ typedef struct
 
 } UserData;
 
+/* For 2x2 Image, 3 bytes per pixel (R, G, B):
+{
+    255, 0, 0,  // Red
+    0, 255, 0,  // Green
+    0, 0, 255,  // Blue
+    255, 255, 0 // Yellow
+}; */
+#define BYTES_PER_PIXEL 3
+GLubyte pixels[LV_HOR_RES_MAX * LV_VER_RES_MAX * BYTES_PER_PIXEL];
+
+void put_px(uint16_t x, uint16_t y, uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
+    assert(x >= 0); assert(x < LV_HOR_RES_MAX);
+    assert(y >= 0); assert(y < LV_VER_RES_MAX);
+    int i = (y * LV_HOR_RES_MAX * BYTES_PER_PIXEL) + (x * BYTES_PER_PIXEL);
+    pixels[i++] = r;  //  Red
+    pixels[i++] = g;  //  Green
+    pixels[i++] = b;  //  Blue
+}
+
 ///
 // Create a simple 2x2 texture image with four different colors
 //
@@ -34,15 +54,6 @@ GLuint CreateSimpleTexture2D()
 {
     // Texture object handle
     GLuint textureId;
-
-    // 2x2 Image, 3 bytes per pixel (R, G, B)
-    GLubyte pixels[4 * 3] =
-        {
-            255, 0, 0,  // Red
-            0, 255, 0,  // Green
-            0, 0, 255,  // Blue
-            255, 255, 0 // Yellow
-        };
 
     // Use tightly packed data
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
@@ -54,7 +65,14 @@ GLuint CreateSimpleTexture2D()
     glBindTexture(GL_TEXTURE_2D, textureId);
 
     // Load the texture
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 2, 2, 0, GL_RGB, GL_UNSIGNED_BYTE, pixels);
+    glTexImage2D(
+        GL_TEXTURE_2D, 
+        0,  //  Level
+        GL_RGB, 
+        LV_HOR_RES_MAX,  //  Width
+        LV_VER_RES_MAX,  //  Height
+        0,  //  Border
+        GL_RGB, GL_UNSIGNED_BYTE, pixels);
 
     // Set the filtering mode
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
