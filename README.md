@@ -32,6 +32,10 @@ cd lvgl-wayland
 
 Press `Ctrl-C` to stop the log display.
 
+## Current Status
+
+Simple LVGL controls render OK on PinePhone. Touch input not implemented yet.
+
 ## Extend LVGL to support Wayland EGL (OpenGLES2)
 
 LVGL doesn't support rendering to Wayland EGL (OpenGLES2) and SDL2 doesn't work on PinePhone with Ubuntu Touch. So we'll extend LVGL ourselves to support Wayland EGL.
