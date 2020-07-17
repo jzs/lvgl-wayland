@@ -76,8 +76,8 @@ static void render_display()
     lv_port_disp_init();
 
     //  Create widgets
-    //  lv_demo_widgets();
-    render_widgets();
+    lv_demo_widgets();
+    //  render_widgets();
 
     //  Render widgets
     puts("Handle task...");
