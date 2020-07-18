@@ -22,14 +22,14 @@
 /* Maximal horizontal and vertical resolution to support by the library.*/
 
 //  Actual Resolution
-//  #define LV_HOR_RES_MAX          (720)
-//  #define LV_VER_RES_MAX          (1398)
-//  #define LV_SCALE_RES            1
+#define LV_HOR_RES_MAX          (720)
+#define LV_VER_RES_MAX          (1398)
+#define LV_SCALE_RES            1
 
 //  Half Resolution
-#define LV_HOR_RES_MAX          (360)
-#define LV_VER_RES_MAX          (699)
-#define LV_SCALE_RES            2
+// #define LV_HOR_RES_MAX          (360)
+// #define LV_VER_RES_MAX          (699)
+// #define LV_SCALE_RES            2
 
 /* Color depth:
  * - 1:  1 byte per pixel
@@ -71,9 +71,13 @@
  * The 4th is extra large which has no upper limit so not listed here
  * The upper limit of the categories are set below in 0.1 inch unit.
  */
-#define LV_DISP_SMALL_LIMIT  30
-#define LV_DISP_MEDIUM_LIMIT 50
-#define LV_DISP_LARGE_LIMIT  70
+#define LV_DISP_SMALL_LIMIT  60
+#define LV_DISP_MEDIUM_LIMIT 100
+#define LV_DISP_LARGE_LIMIT  140
+
+////#define LV_DISP_SMALL_LIMIT  30
+////#define LV_DISP_MEDIUM_LIMIT 50
+////#define LV_DISP_LARGE_LIMIT  70
 
 /* Type of coordinates. Should be `int16_t` (or `int32_t` for extreme cases) */
 typedef int16_t lv_coord_t;
