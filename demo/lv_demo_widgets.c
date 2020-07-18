@@ -192,6 +192,7 @@ static void controls_create(lv_obj_t * parent)
     lv_textarea_set_pwd_mode(ta, true);
     lv_textarea_set_placeholder_text(ta, "Password");
 
+#ifdef NOTUSED
     ta = lv_textarea_create(h, NULL);
     lv_cont_set_fit2(ta, LV_FIT_PARENT, LV_FIT_NONE);
     lv_textarea_set_text(ta, "");
@@ -199,6 +200,7 @@ static void controls_create(lv_obj_t * parent)
     lv_textarea_set_cursor_hidden(ta, true);
     lv_obj_set_event_cb(ta, ta_event_cb);
     lv_cont_set_fit4(ta, LV_FIT_PARENT, LV_FIT_PARENT, LV_FIT_NONE, LV_FIT_PARENT);
+#endif  //  NOTUSED
 
 #if LV_DEMO_WIDGETS_SLIDESHOW
     tab_content_anim_create(parent);
