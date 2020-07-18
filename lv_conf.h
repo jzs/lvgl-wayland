@@ -71,10 +71,6 @@
  * The 4th is extra large which has no upper limit so not listed here
  * The upper limit of the categories are set below in 0.1 inch unit.
  */
-//#define LV_DISP_SMALL_LIMIT  60
-//#define LV_DISP_MEDIUM_LIMIT 100
-//#define LV_DISP_LARGE_LIMIT  140
-
 #define LV_DISP_SMALL_LIMIT  30
 #define LV_DISP_MEDIUM_LIMIT 50
 #define LV_DISP_LARGE_LIMIT  70
