@@ -115,6 +115,7 @@ static void controls_create(lv_obj_t * parent)
     lv_disp_size_t disp_size = lv_disp_get_size_category(NULL);
     lv_coord_t grid_w = lv_page_get_width_grid(parent, disp_size <= LV_DISP_SIZE_SMALL ? 1 : 2, 1);
 
+#ifdef NOTUSED
 #if LV_DEMO_WIDGETS_SLIDESHOW == 0
     static const char * btns[] = {"Cancel", "Ok", ""};
 
@@ -123,6 +124,7 @@ static void controls_create(lv_obj_t * parent)
     lv_obj_t * btnm = lv_msgbox_get_btnmatrix(m);
     lv_btnmatrix_set_btn_ctrl(btnm, 1, LV_BTNMATRIX_CTRL_CHECK_STATE);
 #endif
+#endif  //  NOTUSED
 
     lv_obj_t * h = lv_cont_create(parent, NULL);
     lv_cont_set_layout(h, LV_LAYOUT_PRETTY_MID);
