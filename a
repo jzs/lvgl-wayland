@@ -1,0 +1,13 @@
+#!/bin/sh
+# Script to start SSH service and show IP address
+
+# Start SSH service
+sudo service ssh start
+
+# Show IP address
+ifconfig | \
+    grep -v "127.0.0.1" | \
+    grep "inet addr:"
+
+# Ping repeatedly to keep WiFi alive
+ping google.com
