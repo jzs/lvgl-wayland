@@ -83,8 +83,8 @@ void lv_demo_widgets(void)
     }
 #endif
 
-    t1 = lv_tabview_add_tab(tv, "Controls");
     t2 = lv_tabview_add_tab(tv, "Visuals");
+    t1 = lv_tabview_add_tab(tv, "Controls");
     t3 = lv_tabview_add_tab(tv, "Selectors");
 
 
@@ -94,8 +94,8 @@ void lv_demo_widgets(void)
     lv_style_set_margin_top(&style_box, LV_STATE_DEFAULT, LV_DPX(30));
 
     controls_create(t1);
-    //// TODO: visuals_create(t2);
-    //// TODO: selectors_create(t3);
+    visuals_create(t2);
+    selectors_create(t3);
 
 #if LV_DEMO_WIDGETS_SLIDESHOW
     lv_task_create(tab_changer_task_cb, 8000, LV_TASK_PRIO_LOW, NULL);
