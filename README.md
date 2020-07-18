@@ -44,6 +44,26 @@ See https://github.com/lupyuen/pinephone-mir
 
 TODO
 
+## Start SSH Service on PinePhone
+
+Save this script into a file (like `a`) and run it with `. a`  (there's a space before `a`)
+
+```bash
+#!/bin/sh
+# Script to start SSH service and show IP address
+
+# Start SSH service
+sudo service ssh start
+
+# Show IP address
+ifconfig | \
+    grep -v "127.0.0.1" | \
+    grep "inet addr:"
+
+# Ping repeatedly to keep WiFi alive
+ping google.com
+```
+
 <h1 align="center"> LVGL - Light and Versatile Graphics Library</h1>
 <p align="center">
 <a href="https://github.com/lvgl/lvgl/blob/master/LICENCE.txt"><img src="https://img.shields.io/badge/licence-MIT-blue.svg"></a>
