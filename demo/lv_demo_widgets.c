@@ -83,9 +83,9 @@ void lv_demo_widgets(void)
     }
 #endif
 
-    t2 = lv_tabview_add_tab(tv, "Visuals");
-    t1 = lv_tabview_add_tab(tv, "Controls");
     t3 = lv_tabview_add_tab(tv, "Selectors");
+    t1 = lv_tabview_add_tab(tv, "Controls");
+    t2 = lv_tabview_add_tab(tv, "Visuals");
 
 
     lv_style_init(&style_box);
