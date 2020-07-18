@@ -1,5 +1,9 @@
 # LVGL Experimental Build for PinePhone Ubuntu Touch with Wayland EGL
 
+Read the article...
+
+[_"Wayland and LVGL on PinePhone with Ubuntu Touch"_](https://lupyuen.github.io/pinetime-rust-mynewt/articles/wayland)
+
 ## Build LVGL (LittleVGL) on PinePhone Ubuntu Touch
 
 Connect to PinePhone over SSH and run these commands...
