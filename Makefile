@@ -14,7 +14,7 @@ WAYLAND_CSRCS := \
 
 TARGETS:= wayland/lvgl
 
-DEPS   := lvgl-conf.h
+DEPS   := lv_conf.h
 
 CC     := gcc
 
