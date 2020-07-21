@@ -14,9 +14,9 @@ WAYLAND_CSRCS := \
 
 TARGETS:= wayland/lvgl
 
-DEPS   := lvgl.h
+DEPS   := lvgl-conf.h
 
-CC      := gcc
+CC     := gcc
 
 CCFLAGS := \
 	-g \
@@ -24,13 +24,13 @@ CCFLAGS := \
 	-D LV_USE_DEMO_WIDGETS
 
 LDFLAGS := \
+    -Wl,-Map=wayland/lvgl.map \
+    -L/usr/lib/aarch64-linux-gnu/mesa-egl \
     -lwayland-client \
     -lwayland-server \
     -lwayland-egl \
-    -L/usr/lib/aarch64-linux-gnu/mesa-egl \
     -lEGL \
-    /usr/lib/aarch64-linux-gnu/mesa-egl/libGLESv2.so.2 \
-	-Wl,-Map=lvgl.map \
+    -lGLESv2
 
 MAINS  := $(addsuffix .o, $(TARGETS) )
 OBJ    := \
