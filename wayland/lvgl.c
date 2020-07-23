@@ -1,4 +1,5 @@
-//  Simple port of LVGL to Wayland on PinePhone with Ubuntu Touch. Renders
+//  Simple port of LVGL to Wayland on PinePhone with Ubuntu Touch. 
+//  Renders UI controls but touch input not handled yet.
 //  Bundled source files: shader.c, texture.c, util.c, util.h
 //  To build and run on PinePhone, see lvgl.sh.
 //  Sample log: logs/lvgl.log 
