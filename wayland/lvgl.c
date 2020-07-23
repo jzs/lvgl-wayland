@@ -73,6 +73,10 @@ static void render_display() {
     render_widgets();  //  For button and label
     //  lv_demo_widgets();  //  For all kinds of demo widgets
 
+    //  Render the LVGL widgets
+    puts("Handle task...");
+    lv_task_handler();
+
     //  Create the texture context
     static ESContext esContext;
     esInitContext ( &esContext );
