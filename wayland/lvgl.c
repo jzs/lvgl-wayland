@@ -70,8 +70,8 @@ static void render_display() {
     lv_port_disp_init();
 
     //  Create the LVGL widgets
-    render_widgets();  //  For button and label
-    //  lv_demo_widgets();  //  For all kinds of demo widgets
+    //  render_widgets();  //  For button and label
+    lv_demo_widgets();  //  For all kinds of demo widgets
 
     //  Render the LVGL widgets
     puts("Handle task...");
