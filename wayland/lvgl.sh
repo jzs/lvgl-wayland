@@ -18,12 +18,15 @@ sudo mount -o remount,rw /
 # Copy app to File Manager folder
 cd wayland
 sudo cp lvgl /usr/share/click/preinstalled/.click/users/@all/com.ubuntu.filemanager
-sudo chown clickpkg:clickpkg /usr/share/click/preinstalled/.click/users/@all/com.ubuntu.filemanager/lvgl
-ls -l /usr/share/click/preinstalled/.click/users/@all/com.ubuntu.filemanager/lvgl
 
 # Copy run script to File Manager folder
 # TODO: Check that run.sh contains "./lvgl"
 sudo cp run.sh /usr/share/click/preinstalled/.click/users/@all/com.ubuntu.filemanager
+
+# Set ownership on the app and the run script
+sudo chown clickpkg:clickpkg /usr/share/click/preinstalled/.click/users/@all/com.ubuntu.filemanager/lvgl
+sudo chown clickpkg:clickpkg /usr/share/click/preinstalled/.click/users/@all/com.ubuntu.filemanager/run.sh
+ls -l /usr/share/click/preinstalled/.click/users/@all/com.ubuntu.filemanager/lvgl
 
 # Start the File Manager
 echo "*** Tap on File Manager icon on PinePhone"
