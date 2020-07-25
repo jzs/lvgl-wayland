@@ -1,0 +1,667 @@
+Jul 25 10:40:21 ubuntu-phablet rsyslogd: [origin software="rsyslogd" swVersion="8.16.0" x-pid="1913" x-info="http://www.rsyslog.com"] start
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Linux version 5.6.0-pine64 (root@runner-mUSadhTy-project-11304676-concurrent-0) (gcc version 7.4.0 (Ubuntu/Linaro 7.4.0-1ubuntu1~18.04.1)) #1 SMP Sat Jun 27 03:29:32 UTC 2020
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Machine model: Pine64 PinePhone Braveheart (1.1)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] cma: Reserved 256 MiB at 0x00000000b0000000
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] NUMA: No NUMA configuration found
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] NUMA: Faking a node at [mem 0x0000000040000000-0x00000000bfffffff]
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] NUMA: NODE_DATA [mem 0xafbcd100-0xafbcefff]
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Zone ranges:
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000]   DMA      [mem 0x0000000040000000-0x000000007fffffff]
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000]   DMA32    [mem 0x0000000080000000-0x00000000bfffffff]
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000]   Normal   empty
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Movable zone start for each node
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Early memory node ranges
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000]   node   0: [mem 0x0000000040000000-0x00000000bfffffff]
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Initmem setup node 0 [mem 0x0000000040000000-0x00000000bfffffff]
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] On node 0 totalpages: 524288
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000]   DMA zone: 4096 pages used for memmap
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000]   DMA zone: 0 pages reserved
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000]   DMA zone: 262144 pages, LIFO batch:63
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000]   DMA32 zone: 4096 pages used for memmap
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000]   DMA32 zone: 262144 pages, LIFO batch:63
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] psci: probing for conduit method from DT.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] psci: PSCIv1.1 detected in firmware.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] psci: Using standard PSCI v0.2 function IDs
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] psci: SMC Calling Convention v1.0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] percpu: Embedded 22 pages/cpu s50328 r8192 d31592 u90112
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] pcpu-alloc: s50328 r8192 d31592 u90112 alloc=22*4096
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Detected VIPT I-cache on CPU0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] CPU features: detected: ARM erratum 845719
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] CPU features: detected: ARM erratum 843419
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 516096
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Policy zone: DMA32
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Kernel command line: console=ttyS0,115200 systempart=/dev/mmcblk2p9 devnum=2 logo.nologo vt.global_cursor_default=0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Dentry cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Inode-cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] software IO TLB: mapped [mem 0x7bfff000-0x7ffff000] (64MB)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] Memory: 1705532K/2097152K available (10942K kernel code, 890K rwdata, 4612K rodata, 768K init, 414K bss, 129476K reserved, 262144K cma-reserved)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] rcu: Hierarchical RCU implementation.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] rcu: 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=4.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] GIC: Using split EOI/Deactivate mode
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] random: get_random_bytes called from start_kernel+0x298/0x424 with crng_init=0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] arch_timer: Enabling global workaround for Allwinner erratum UNKNOWN1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] arch_timer: CPU0: Trapping CNTVCT access
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+Jul 25 10:40:21 ubuntu-phablet rsyslogd-2039: Could not open output pipe '/dev/xconsole':: No such file or directory [v8.16.0 try http://www.rsyslog.com/e/2039 ]
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000005] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000462] Console: colour dummy device 80x25
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000552] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=96000)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000564] pid_max: default: 32768 minimum: 301
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000664] LSM: Security Framework initializing
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000694] Yama: becoming mindful.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000782] AppArmor: AppArmor initialized
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000793] TOMOYO Linux initialized
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000866] Mount-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000887] Mountpoint-cache hash table entries: 4096 (order: 3, 32768 bytes, linear)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.000945] *** VALIDATE tmpfs ***
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.001437] *** VALIDATE proc ***
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.001724] *** VALIDATE cgroup ***
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.001733] *** VALIDATE cgroup2 ***
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.002695] rcu: Hierarchical SRCU implementation.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.005745] smp: Bringing up secondary CPUs ...
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.006912] Detected VIPT I-cache on CPU1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.006965] arch_timer: CPU1: Trapping CNTVCT access
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.006977] CPU1: Booted secondary processor 0x0000000001 [0x410fd034]
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.007768] Detected VIPT I-cache on CPU2
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.007799] arch_timer: CPU2: Trapping CNTVCT access
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.007808] CPU2: Booted secondary processor 0x0000000002 [0x410fd034]
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.008590] Detected VIPT I-cache on CPU3
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.008617] arch_timer: CPU3: Trapping CNTVCT access
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.008625] CPU3: Booted secondary processor 0x0000000003 [0x410fd034]
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.008703] smp: Brought up 1 node, 4 CPUs
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.008727] SMP: Total of 4 processors activated.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.008734] CPU features: detected: 32-bit EL0 Support
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.008741] CPU features: detected: CRC32 instructions
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.023518] CPU: All CPU(s) started at EL2
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.023553] alternatives: patching kernel code
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.025427] devtmpfs: initialized
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.032499] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.032524] futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.041758] pinctrl core: initialized pinctrl subsystem
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.042958] thermal_sys: Registered thermal governor 'step_wise'
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.044377] NET: Registered protocol family 16
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.045974] DMA: preallocated 256 KiB pool for atomic allocations
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.046000] audit: initializing netlink subsys (disabled)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.046206] audit: type=2000 audit(0.044:1): state=initialized audit_enabled=0 res=1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.047409] cpuidle: using governor menu
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.047690] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.047799] ASID allocator initialised with 65536 entries
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.048860] Serial: AMBA PL011 UART driver
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.071052] HugeTLB registered 1.00 GiB page size, pre-allocated 0 pages
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.071069] HugeTLB registered 32.0 MiB page size, pre-allocated 0 pages
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.071076] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.071083] HugeTLB registered 64.0 KiB page size, pre-allocated 0 pages
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.073833] cryptd: max_cpu_qlen set to 1000
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.080011] iommu: Default domain type: Translated 
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.080468] SCSI subsystem initialized
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.080809] usbcore: registered new interface driver usbfs
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.080858] usbcore: registered new interface driver hub
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.080946] usbcore: registered new device driver usb
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.081460] mc: Linux media interface: v0.10
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.081507] videodev: Linux video capture interface: v2.00
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.081561] pps_core: LinuxPPS API ver. 1 registered
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.081569] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.081592] PTP clock support registered
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.081868] EDAC MC: Ver: 3.0.0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.083861] NetLabel: Initializing
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.083874] NetLabel:  domain hash size = 128
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.083879] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.083944] NetLabel:  unlabeled traffic allowed by default
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.084334] clocksource: Switched to clocksource arch_sys_counter
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.084688] VFS: Disk quotas dquot_6.6.0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.084756] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.084796] *** VALIDATE ramfs ***
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.084813] *** VALIDATE hugetlbfs ***
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.085467] AppArmor: AppArmor Filesystem Enabled
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.093516] NET: Registered protocol family 2
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.094126] tcp_listen_portaddr_hash hash table entries: 1024 (order: 2, 16384 bytes, linear)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.094169] TCP established hash table entries: 16384 (order: 5, 131072 bytes, linear)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.094326] TCP bind hash table entries: 16384 (order: 6, 262144 bytes, linear)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.094669] TCP: Hash tables configured (established 16384 bind 16384)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.094811] UDP hash table entries: 1024 (order: 3, 32768 bytes, linear)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.094873] UDP-Lite hash table entries: 1024 (order: 3, 32768 bytes, linear)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.095060] NET: Registered protocol family 1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.095545] RPC: Registered named UNIX socket transport module.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.095552] RPC: Registered udp transport module.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.095556] RPC: Registered tcp transport module.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.095561] RPC: Registered tcp NFSv4.1 backchannel transport module.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.095787] Unpacking initramfs...
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.203876] Freeing initrd memory: 5304K
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.204862] hw perfevents: enabled with armv8_cortex_a53 PMU driver, 7 counters available
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.385922] Initialise system trusted keyrings
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.386113] workingset: timestamp_bits=44 max_order=19 bucket_order=0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.395017] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.396750] *** VALIDATE nfs ***
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.396831] *** VALIDATE nfs4 ***
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.396920] NFS: Registering the id_resolver key type
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.396957] Key type id_resolver registered
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.396962] Key type id_legacy registered
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.396975] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.397159] 9p: Installing v9fs 9p2000 file system support
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.423405] Key type asymmetric registered
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.423421] Asymmetric key parser 'x509' registered
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.423507] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.423516] io scheduler mq-deadline registered
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.423523] io scheduler kyber registered
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.424493] sun50i-de2-bus 1000000.bus: Error couldn't map SRAM to device
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.425602] sun4i-usb-phy 1c19400.phy: failed to get clock usb0_phy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.426133] sun6i-mipi-dphy 1ca1000.d-phy: Couldn't create the DPHY encoder regmap
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.429832] sun50i-a64-r-pinctrl 1f02c00.pinctrl: initialized sunXi PIO driver
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.431257] sun50i-a64-r-pinctrl 1f02c00.pinctrl: 1f02c00.pinctrl supply vcc-pl not found, using dummy regulator
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.445806] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.451860] sun6i-mipi-dsi 1ca0000.dsi: Couldn't get VCC-DSI supply
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.456873] lima 1c40000.gpu: IRQ ppmmu2 not found
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.456892] lima 1c40000.gpu: IRQ ppmmu3 not found
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.456915] lima 1c40000.gpu: gp - mali400 version major 1 minor 1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.456958] lima 1c40000.gpu: pp0 - mali400 version major 1 minor 1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.457001] lima 1c40000.gpu: pp1 - mali400 version major 1 minor 1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.457037] lima 1c40000.gpu: IRQ pp2 not found
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.457046] lima 1c40000.gpu: IRQ pp3 not found
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.457057] lima 1c40000.gpu: l2 cache 64K, 4-way, 64byte cache line, 64bit external bus
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.457485] lima 1c40000.gpu: bus rate = 200000000
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.457495] lima 1c40000.gpu: mod rate = 500000000
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.457885] [drm] Initialized lima 1.1.0 20191231 for 1c40000.gpu on minor 0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.467635] loop: module loaded
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.470137] libphy: Fixed MDIO Bus: probed
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.470641] tun: Universal TUN/TAP device driver, 1.6
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.472836] VFIO - User Level meta-driver version: 0.3
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.474280] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.474321] ehci-platform: EHCI generic platform driver
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.474579] ehci-platform 1c1a000.usb: EHCI Host Controller
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.474612] ehci-platform 1c1a000.usb: new USB bus registered, assigned bus number 1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.474745] ehci-platform 1c1a000.usb: irq 20, io mem 0x01c1a000
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.492345] ehci-platform 1c1a000.usb: USB 2.0 started, EHCI 1.00
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.493202] hub 1-0:1.0: USB hub found
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.493251] hub 1-0:1.0: 1 port detected
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.494054] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.494085] ohci-platform: OHCI generic platform driver
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.494322] ohci-platform 1c1a400.usb: Generic Platform OHCI controller
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.494345] ohci-platform 1c1a400.usb: new USB bus registered, assigned bus number 2
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.494472] ohci-platform 1c1a400.usb: irq 21, io mem 0x01c1a400
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.557173] hub 2-0:1.0: USB hub found
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.557217] hub 2-0:1.0: 1 port detected
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.558552] usbcore: registered new interface driver usb-storage
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.560664] sun6i-rtc 1f00000.rtc: registered as rtc0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.560681] sun6i-rtc 1f00000.rtc: RTC enabled
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.560866] i2c /dev entries driver
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.563769] device-mapper: ioctl: 4.42.0-ioctl (2020-02-27) initialised: dm-devel@redhat.com
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.564471] sdhci: Secure Digital Host Controller Interface driver
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.564485] sdhci: Copyright(c) Pierre Ossman
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.564659] Synopsys Designware Multimedia Card Interface Driver
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.565681] sdhci-pltfm: SDHCI platform and OF driver helper
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.566749] ledtrig-cpu: registered to indicate activity on CPUs
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.567895] usbcore: registered new interface driver usbhid
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.567905] usbhid: USB HID core driver
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.569611] cedrus 1c0e000.video-codec: Device registered as /dev/video0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.572107] Initializing XFRM netlink socket
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.572137] NET: Registered protocol family 17
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.572156] NET: Registered protocol family 15
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.572434] 9pnet: Installing 9P2000 support
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.572481] Key type dns_resolver registered
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.572868] Loading compiled-in X.509 certificates
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.591236] Key type encrypted registered
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.591274] AppArmor: AppArmor sha1 policy hashing enabled
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.591303] evm: Initialising EVM extended attributes:
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.591308] evm: security.selinux
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.591313] evm: security.SMACK64
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.591317] evm: security.apparmor
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.591322] evm: security.capability
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.591326] evm: HMAC attrs: 0x1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.605645] sunxi-rsb 1f03400.rsb: RSB running at 3000000 Hz
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.606069] axp20x-rsb sunxi-rsb-3a3: AXP20x variant AXP803 found
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.608988] input: axp20x-pek as /devices/platform/soc/1f03400.rsb/sunxi-rsb-3a3/axp221-pek/input/input0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.610567] axp20x-adc axp813-adc: DMA mask not set
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.611555] axp20x-battery-power-supply axp20x-battery-power-supply: DMA mask not set
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.617692] axp20x-usb-power-supply axp20x-usb-power-supply: DMA mask not set
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.619109] dcdc1: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.619282] random: fast init done
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.619511] dcdc2: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.619782] dcdc4: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.620077] dcdc5: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.620379] dcdc6: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.620653] dc1sw: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.620888] aldo1: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.620954] dovdd-csi: Bringing 3300000uV into 1800000-1800000uV
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.621221] aldo2: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.621482] aldo3: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.621770] dldo1: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.622042] dldo2: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.622313] dldo3: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.622601] dldo4: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.622666] vcc-wifi-io: Bringing 3300000uV into 1800000-1800000uV
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.622943] eldo1: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.623211] eldo2: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.623498] eldo3: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.623564] dvdd-csi: Bringing 700000uV into 1800000-1800000uV
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.623802] fldo1: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.624082] fldo2: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.624452] rtc-ldo: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.624755] ldo-io0: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.625084] ldo-io1: supplied by regulator-dummy
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.625179] vcc-1v8-typec: Bringing 3300000uV into 1800000-1800000uV
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.625452] axp20x-rsb sunxi-rsb-3a3: AXP20X driver loaded
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.630493] sun50i-a64-pinctrl 1c20800.pinctrl: initialized sunXi PIO driver
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.630953] pwm-backlight backlight: backlight supply power not found, using dummy regulator
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.645329] printk: console [ttyS0] disabled
+Jul 25 10:40:21 ubuntu-phablet kernel: [    0.645403] 1c28000.serial: ttyS0 at MMIO 0x1c28000 (irq = 31, base_baud = 1500000) is a 16550A
+Jul 25 10:40:21 ubuntu-phablet kernel: [    1.991138] printk: console [ttyS0] enabled
+Jul 25 10:40:21 ubuntu-phablet kernel: [    1.996849] 1c28400.serial: ttyS1 at MMIO 0x1c28400 (irq = 32, base_baud = 1500000) is a 16550A
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.005741] serial serial0: tty port ttyS1 registered
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.011656] 1c28c00.serial: ttyS2 at MMIO 0x1c28c00 (irq = 33, base_baud = 1500000) is a 16550A
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.021622] panel-xingbangda-xbd599 1ca0000.dsi.0: [drm:xbd599_probe] *ERROR* mipi_dsi_attach failed. Is host ready?
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.061231] sun4i-drm display-engine: bound 1100000.mixer (ops sun8i_mixer_ops)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.070154] sun4i-drm display-engine: bound 1200000.mixer (ops sun8i_mixer_ops)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.077911] sun4i-drm display-engine: No panel or bridge found... RGB output disabled
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.085755] sun4i-drm display-engine: bound 1c0c000.lcd-controller (ops sun4i_tcon_ops)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.093951] sun4i-drm display-engine: bound 1c0d000.lcd-controller (ops sun4i_tcon_ops)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.101987] sun4i-drm display-engine: bound 1ca0000.dsi (ops sun6i_dsi_ops)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.108948] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.115559] [drm] No driver support for vblank timestamp query.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.121951] [drm] Initialized sun4i-drm 1.0.0 20150629 for display-engine on minor 1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.129764] sun4i-drm display-engine: [drm] Cannot find any crtc or sizes
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.137411] ehci-platform 1c1b000.usb: EHCI Host Controller
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.143012] ehci-platform 1c1b000.usb: new USB bus registered, assigned bus number 3
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.150884] ehci-platform 1c1b000.usb: irq 22, io mem 0x01c1b000
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.157015] sun4i-drm display-engine: [drm] Cannot find any crtc or sizes
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.172339] ehci-platform 1c1b000.usb: USB 2.0 started, EHCI 1.00
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.179208] hub 3-0:1.0: USB hub found
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.183010] hub 3-0:1.0: 1 port detected
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.188012] ohci-platform 1c1b400.usb: Generic Platform OHCI controller
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.194660] ohci-platform 1c1b400.usb: new USB bus registered, assigned bus number 4
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.202531] ohci-platform 1c1b400.usb: irq 23, io mem 0x01c1b400
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.273070] hub 4-0:1.0: USB hub found
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.276867] hub 4-0:1.0: 1 port detected
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.381824] Goodix-TS 0-005d: ID 917S, version: 0200
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.388019] Goodix-TS 0-005d: Direct firmware load for goodix_917S_cfg.bin failed with error -2
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.407359] sunxi-mmc 1c0f000.mmc: Got CD GPIO
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.423494] input: Goodix Capacitive TouchScreen as /devices/platform/soc/1c2ac00.i2c/i2c-0/0-005d/input/input1
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.448745] sunxi-mmc 1c0f000.mmc: initialized, max. request size: 16384 KB, uses new timings mode
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.487897] sunxi-mmc 1c10000.mmc: initialized, max. request size: 16384 KB, uses new timings mode
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.523266] mmc1: new high speed SDIO card at address 0001
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.531520] sunxi-mmc 1c11000.mmc: initialized, max. request size: 2048 KB, uses new timings mode
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.549634] scpi_protocol scpi: SCP Protocol 1.2 Firmware 0.1.9000 version
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.560344] usb0-vbus: supplied by vcc5v0
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.666048] mmc2: new DDR MMC card at address 0001
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.669775] mmcblk2: mmc2:0001  14.7 GiB 
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.670168] mmcblk2boot0: mmc2:0001  partition 1 4.00 MiB
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.670540] mmcblk2boot1: mmc2:0001  partition 2 4.00 MiB
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.674825] GPT:Primary header thinks Alt. header is not at the end of the disk.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.674832] GPT:28515624 != 30785535
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.674834] GPT:Alternate GPT header not at the end of the disk.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.674836] GPT:28515624 != 30785535
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.674838] GPT: Use GNU Parted to correct GPT errors.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    2.674891]  mmcblk2: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.006050] Console: switching to colour frame buffer device 90x90
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.117168] sun4i-drm display-engine: fb0: sun4i-drmdrmfb frame buffer device
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.124332] sun6i-mipi-dsi 1ca0000.dsi: Attached device xbd599
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.130182] panel-xingbangda-xbd599 1ca0000.dsi.0: [drm:xbd599_probe] 720x1440@60 24bpp dsi 4dl - ready
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.144881] input: gpio-keys as /devices/platform/gpio-keys/input/input2
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.154596] sun6i-rtc 1f00000.rtc: setting system clock to 2020-07-25T02:40:16 UTC (1595644816)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.168492] Freeing unused kernel memory: 768K
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.188429] Run /init as init process
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.192093]   with arguments:
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.192098]     /init
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.192103]   with environment:
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.192109]     HOME=/
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.192113]     TERM=linux
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.192119]     systempart=/dev/mmcblk2p9
+Jul 25 10:40:21 ubuntu-phablet kernel: [    3.192124]     devnum=2
+Jul 25 10:40:21 ubuntu-phablet kernel: [    4.117217] EXT4-fs (mmcblk2p10): recovery complete
+Jul 25 10:40:21 ubuntu-phablet kernel: [    4.123796] EXT4-fs (mmcblk2p10): mounted filesystem with ordered data mode. Opts: errors=remount-ro
+Jul 25 10:40:21 ubuntu-phablet kernel: [    4.270677] EXT4-fs: Warning: mounting with data=journal disables delayed allocation, dioread_nolock, and O_DIRECT support!
+Jul 25 10:40:21 ubuntu-phablet kernel: [    4.291800] EXT4-fs (mmcblk2p10): mounted filesystem with journalled data mode. Opts: discard,data=journal
+Jul 25 10:40:21 ubuntu-phablet kernel: [    4.372644] EXT4-fs (mmcblk2p9): mounted filesystem with ordered data mode. Opts: (null)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    4.424073] EXT4-fs (mmcblk2p9): re-mounted. Opts: (null)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    5.123373] EXT4-fs (mmcblk2p8): warning: mounting unchecked fs, running e2fsck is recommended
+Jul 25 10:40:21 ubuntu-phablet kernel: [    5.132526] EXT4-fs (mmcblk2p8): mounted filesystem without journal. Opts: (null)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    5.195433] EXT4-fs (mmcblk2p4): mounted filesystem with ordered data mode. Opts: (null)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    5.203623] ext4 filesystem being mounted at /root/android/boot supports timestamps until 2038 (0x7fffffff)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    5.263082] EXT4-fs (mmcblk2p3): warning: mounting unchecked fs, running e2fsck is recommended
+Jul 25 10:40:21 ubuntu-phablet kernel: [    5.272194] EXT4-fs (mmcblk2p3): mounted filesystem without journal. Opts: (null)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    5.279741] ext4 filesystem being mounted at /root/android/persist supports timestamps until 2038 (0x7fffffff)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    5.356358] Adding 32764k swap on /root/userdata/SWAP.img.  Priority:-2 extents:1 across:32764k SS
+Jul 25 10:40:21 ubuntu-phablet kernel: [    5.528604] Not activating Mandatory Access Control as /sbin/tomoyo-init does not exist.
+Jul 25 10:40:21 ubuntu-phablet kernel: [    5.786387] random: init: uninitialized urandom read (12 bytes read)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    5.991729] random: mountall: uninitialized urandom read (12 bytes read)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    6.046416] random: mountall: uninitialized urandom read (16 bytes read)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    6.202729] process '/usr/bin/mawk' started with executable stack
+Jul 25 10:40:21 ubuntu-phablet rsyslogd-2007: action 'action 11' suspended, next retry is Sat Jul 25 10:40:51 2020 [v8.16.0 try http://www.rsyslog.com/e/2007 ]
+Jul 25 10:40:21 ubuntu-phablet dbus[1932]: [system] AppArmor D-Bus mediation is enabled
+Jul 25 10:40:21 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.hostname1' (using servicehelper)
+Jul 25 10:40:21 ubuntu-phablet kernel: [    7.404617] i2c-gpio i2c-csi: using lines 141 (SDA) and 140 (SCL)
+Jul 25 10:40:21 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.hostname1'
+Jul 25 10:40:21 ubuntu-phablet gpsd[1945]: gpsd:INFO: launching (Version 3.15)
+Jul 25 10:40:21 ubuntu-phablet wpa_supplicant[1938]: Successfully initialized wpa_supplicant
+Jul 25 10:40:21 ubuntu-phablet kernel: [    7.645433] NET: Registered protocol family 10
+Jul 25 10:40:21 ubuntu-phablet gpsd[1945]: gpsd:ERROR: can't bind to IPv6 port gpsd, Cannot assign requested address
+Jul 25 10:40:21 ubuntu-phablet gpsd[1945]: gpsd:INFO: listening on port gpsd
+Jul 25 10:40:21 ubuntu-phablet kernel: [    7.649977] Segment Routing with IPv6
+Jul 25 10:40:21 ubuntu-phablet gpsd[1945]: gpsd:INFO: stashing device /dev/EG25.NMEA at slot 0
+Jul 25 10:40:21 ubuntu-phablet gpsd[1945]: gpsd:INFO: running with effective group ID 20
+Jul 25 10:40:21 ubuntu-phablet gpsd[1945]: gpsd:INFO: running with effective user ID 0
+Jul 25 10:40:21 ubuntu-phablet gpsd[1945]: gpsd:INFO: startup at 2020-07-25T02:40:21.000Z (1595644821)
+Jul 25 10:40:22 ubuntu-phablet kernel: [    7.945505] audit: type=1400 audit(1595644822.020:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="address-book-app" pid=2030 comm="apparmor_parser"
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.038125] audit: type=1400 audit(1595644822.100:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/sbin/dhclient" pid=2032 comm="apparmor_parser"
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.038142] audit: type=1400 audit(1595644822.100:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-client.action" pid=2032 comm="apparmor_parser"
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.038148] audit: type=1400 audit(1595644822.100:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-helper" pid=2032 comm="apparmor_parser"
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.038153] audit: type=1400 audit(1595644822.100:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=2032 comm="apparmor_parser"
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.038159] audit: type=1400 audit(1595644822.112:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/lightdm/lightdm-guest-session" pid=2031 comm="apparmor_parser"
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.038165] audit: type=1400 audit(1595644822.112:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/lightdm/lightdm-guest-session//chromium" pid=2031 comm="apparmor_parser"
+Jul 25 10:40:21 ubuntu-phablet rsyslogd-2222: command 'KLogPermitNonKernelFacility' is currently not permitted - did you already set it via a RainerScript command (v6+ config)? [v8.16.0 try http://www.rsyslog.com/e/2222 ]
+Jul 25 10:40:21 ubuntu-phablet rsyslogd: rsyslogd's groupid changed to 103
+Jul 25 10:40:21 ubuntu-phablet rsyslogd: rsyslogd's userid changed to 100
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.059308] audit: type=1400 audit(1595644822.132:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/bin/mediascanner-service-2.0" pid=2035 comm="apparmor_parser"
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.103569] input: 1c21800.lradc as /devices/platform/soc/1c21800.lradc/input/input3
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.137197] usb_phy_generic usb_phy_generic.1.auto: usb_phy_generic.1.auto supply vcc not found, using dummy regulator
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.213313] audit: type=1400 audit(1595644822.288:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/bin/media-hub-server" pid=2033 comm="apparmor_parser"
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.216061] Bluetooth: Core ver 2.22
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.216214] NET: Registered protocol family 31
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.216218] Bluetooth: HCI device and connection manager initialized
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.216241] Bluetooth: HCI socket layer initialized
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.216249] Bluetooth: L2CAP socket layer initialized
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.216269] Bluetooth: SCO socket layer initialized
+Jul 25 10:40:22 ubuntu-phablet bluetoothd[2034]: Bluetooth daemon 5.41
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.244818] audit: type=1400 audit(1595644822.320:11): apparmor="STATUS" operation="profile_load" profile="unconfined" name="messaging-app" pid=2045 comm="apparmor_parser"
+Jul 25 10:40:22 ubuntu-phablet bluetoothd[2034]: Starting SDP server
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.270088] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.361967] Bluetooth: BNEP (Ethernet Emulation) ver 1.3
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.361976] Bluetooth: BNEP filters: protocol multicast
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.361997] Bluetooth: BNEP socket layer initialized
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.379444] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+Jul 25 10:40:22 ubuntu-phablet bluetoothd[2034]: Bluetooth management interface 1.15 initialized
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.380882] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.380900] cfg80211: failed to load regulatory.db
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.421496] Bluetooth: HCI UART driver ver 2.3
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.421507] Bluetooth: HCI UART protocol H4 registered
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.421569] Bluetooth: HCI UART protocol LL registered
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.421612] Bluetooth: HCI UART protocol Three-wire (H5) registered
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.421869] Bluetooth: HCI UART protocol Broadcom registered
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.467998] bt-sco bt-sco-codec: ASoC: sink widget Capture overwritten
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.468017] bt-sco bt-sco-codec: ASoC: source widget Playback overwritten
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.468135] simple-amplifier audio-amplifier: audio-amplifier supply VCC not found, using dummy regulator
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.485455] 8723cs: module is from the staging directory, the quality is unknown, you have been warned.
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.535596] asoc-simple-card sound: sun8i-codec-aif1 <-> 1c22c00.dai mapping ok
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.535683] asoc-simple-card sound: sun8i-codec-aif2 <-> ec25 mapping ok
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.535709] asoc-simple-card sound: sun8i-codec-aif3 <-> bt-sco-pcm mapping ok
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.536739] debugfs: File 'Playback' in directory 'dapm' already present!
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.543615] debugfs: File 'Capture' in directory 'dapm' already present!
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.599059] iio iio:device3: registered magnetometer lis3mdl
+Jul 25 10:40:22 ubuntu-phablet kernel: [    8.848479] i2c i2c-1: Added multiplexed i2c bus 4
+Jul 25 10:40:23 ubuntu-phablet kernel: [    9.195778] Bluetooth: hci0: RTL: examining hci_ver=07 hci_rev=000b lmp_ver=07 lmp_subver=8703
+Jul 25 10:40:23 ubuntu-phablet kernel: [    9.202756] Bluetooth: hci0: RTL: chip_type status=0 type=5
+Jul 25 10:40:23 ubuntu-phablet kernel: [    9.249639] Bluetooth: hci0: RTL: rom_version status=0 version=1
+Jul 25 10:40:23 ubuntu-phablet kernel: [    9.249652] Bluetooth: hci0: RTL: loading rtl_bt/rtl8723cs_xx_fw.bin
+Jul 25 10:40:23 ubuntu-phablet kernel: [    9.260186] Bluetooth: hci0: RTL: loading rtl_bt/rtl8723cs_xx_config-pinebook.bin
+Jul 25 10:40:23 ubuntu-phablet kernel: [    9.348549] Bluetooth: hci0: RTL: cfg_sz 63, total sz 19427
+Jul 25 10:40:23 ubuntu-phablet kernel: [    9.498904] random: crng init done
+Jul 25 10:40:23 ubuntu-phablet kernel: [    9.498923] random: 7 urandom warning(s) missed due to ratelimiting
+Jul 25 10:40:23 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.login1' (using servicehelper)
+Jul 25 10:40:23 ubuntu-phablet ofonod[2205]: oFono version 1.31
+Jul 25 10:40:23 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.systemd1' (using servicehelper)
+Jul 25 10:40:23 ubuntu-phablet failsafe: Failsafe of 120 seconds reached.
+Jul 25 10:40:23 ubuntu-phablet kernel: [    9.757384] Bluetooth: hci0: RTL: fw version 0xaa5ca4dc
+Jul 25 10:40:23 ubuntu-phablet bluetoothd[2034]: Failed to obtain handles for "Service Changed" characteristic
+Jul 25 10:40:23 ubuntu-phablet bluetoothd[2034]: Sap driver initialization failed.
+Jul 25 10:40:23 ubuntu-phablet bluetoothd[2034]: sap-server: Operation not permitted (1)
+Jul 25 10:40:23 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.systemd1'
+Jul 25 10:40:23 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.login1'
+Jul 25 10:40:24 ubuntu-phablet kernel: [    9.951060] Bluetooth: RFCOMM TTY layer initialized
+Jul 25 10:40:24 ubuntu-phablet kernel: [    9.951096] Bluetooth: RFCOMM socket layer initialized
+Jul 25 10:40:24 ubuntu-phablet kernel: [    9.951135] Bluetooth: RFCOMM ver 1.11
+Jul 25 10:40:24 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.Accounts' (using servicehelper)
+Jul 25 10:40:24 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.PolicyKit1' (using servicehelper)
+Jul 25 10:40:24 ubuntu-phablet polkitd[2301]: started daemon version 0.105 using authority implementation `local' version `0.105'
+Jul 25 10:40:24 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.PolicyKit1'
+Jul 25 10:40:24 ubuntu-phablet accounts-daemon[2276]: started daemon version 0.6.40
+Jul 25 10:40:24 ubuntu-phablet NetworkManager[2359]: <info>  [1595644824.7724] NetworkManager (version 1.2.2) is starting...
+Jul 25 10:40:24 ubuntu-phablet NetworkManager[2359]: <info>  [1595644824.7765] Read config: /etc/NetworkManager/NetworkManager.conf (etc: default-wifi-powersave-on.conf)
+Jul 25 10:40:24 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.Accounts'
+Jul 25 10:40:24 ubuntu-phablet ntpdate[2355]: name server cannot be used: Temporary failure in name resolution (-3)
+Jul 25 10:40:24 ubuntu-phablet NetworkManager[2359]: <warn>  [1595644824.8616] Skipping Sleep Monitor setup, system not booted with systemd
+Jul 25 10:40:24 ubuntu-phablet NetworkManager[2359]: <info>  [1595644824.8677] manager[0x38bd91a0]: monitoring kernel firmware directory '/lib/firmware'.
+Jul 25 10:40:24 ubuntu-phablet NetworkManager[2359]: <info>  [1595644824.8687] monitoring ifupdown state file '/run/network/ifstate'.
+Jul 25 10:40:24 ubuntu-phablet NetworkManager[2359]: <info>  [1595644824.9379] dns-mgr[0x38bea8a0]: set resolv-conf-mode: dnsmasq, plugin="dnsmasq"
+Jul 25 10:40:24 ubuntu-phablet NetworkManager[2359]: <info>  [1595644824.9381] dns-mgr[0x38bea8a0]: using resolv.conf manager 'resolvconf'
+Jul 25 10:40:24 ubuntu-phablet NetworkManager[2359]: <info>  [1595644824.9572] rfkill0: found WiFi radio killswitch (at /sys/devices/platform/soc/1c10000.mmc/mmc_host/mmc1/mmc1:0001/mmc1:0001:1/ieee80211/phy0/rfkill0) (driver rtl8723cs)
+Jul 25 10:40:24 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.nm_dispatcher' (using servicehelper)
+Jul 25 10:40:25 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1739] init!
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1749]       interface-parser: parsing file /etc/network/interfaces
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <warn>  [1595644825.1751] ignoring out-of-block data 'source-directory /etc/network/interfaces.d'
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1752]       interface-parser: finished parsing file /etc/network/interfaces
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1753] management mode: unmanaged
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1768] devices added (path: /sys/devices/platform/soc/1c10000.mmc/mmc_host/mmc1/mmc1:0001/mmc1:0001:1/net/wlan0, iface: wlan0)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1769] device added (path: /sys/devices/platform/soc/1c10000.mmc/mmc_host/mmc1/mmc1:0001/mmc1:0001:1/net/wlan0, iface: wlan0): no ifupdown configuration found.
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1770] devices added (path: /sys/devices/virtual/net/lo, iface: lo)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1770] device added (path: /sys/devices/virtual/net/lo, iface: lo): no ifupdown configuration found.
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1770] end _init.
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1771] settings: loaded plugin ifupdown: (C) 2008 Canonical Ltd.  To report bugs please use the NetworkManager mailing list. (/usr/lib/aarch64-linux-gnu/NetworkManager/libnm-settings-plugin-ifupdown.so)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1774] settings: loaded plugin keyfile: (c) 2007 - 2015 Red Hat, Inc.  To report bugs please use the NetworkManager mailing list.
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1803] SettingsPlugin-Ofono: init!
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1817] SettingsPlugin-Ofono: end _init.
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1818] settings: loaded plugin ofono: (C) 2013-2016 Canonical Ltd.  To report bugs please use the NetworkManager mailing list. (/usr/lib/aarch64-linux-gnu/NetworkManager/libnm-settings-plugin-ofono.so)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1819] (952096592) ... get_connections.
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.1820] (952096592) ... get_connections (managed=false): return empty list.
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.2800] SettingsPlugin-Ofono: (952096816) ... get_connections.
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.2802] SettingsPlugin-Ofono: (952096816) connections count: 0
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.2808] get unmanaged devices count: 0
+Jul 25 10:40:25 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.UPower' (using servicehelper)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.2974] settings: hostname: using hostnamed
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.2976] settings: hostname changed from (none) to "ubuntu-phablet"
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.2992] Using DHCP client 'dhclient'
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.2996] manager: WiFi enabled by radio killswitch; enabled by state file
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.2998] manager: WWAN enabled by radio killswitch; enabled by state file
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.2999] manager: Networking is enabled by state file
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3003] Loaded device plugin: NMVxlanFactory (internal)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3005] Loaded device plugin: NMVlanFactory (internal)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3007] Loaded device plugin: NMVethFactory (internal)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3008] Loaded device plugin: NMTunFactory (internal)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3009] Loaded device plugin: NMMacvlanFactory (internal)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3010] Loaded device plugin: NMIPTunnelFactory (internal)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3011] Loaded device plugin: NMInfinibandFactory (internal)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3012] Loaded device plugin: NMEthernetFactory (internal)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3013] Loaded device plugin: NMBridgeFactory (internal)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3013] Loaded device plugin: NMBondFactory (internal)
+Jul 25 10:40:25 ubuntu-phablet nm-dispatcher: req:1 'hostname': new request (3 scripts)
+Jul 25 10:40:25 ubuntu-phablet nm-dispatcher: req:1 'hostname': start running ordered scripts...
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3400] Loaded device plugin: NMWwanFactory (/usr/lib/aarch64-linux-gnu/NetworkManager/libnm-device-plugin-wwan.so)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3564] Loaded device plugin: NMBluezManager (/usr/lib/aarch64-linux-gnu/NetworkManager/libnm-device-plugin-bluetooth.so)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3728] Loaded device plugin: NMAtmManager (/usr/lib/aarch64-linux-gnu/NetworkManager/libnm-device-plugin-adsl.so)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3820] Loaded device plugin: NMWifiFactory (/usr/lib/aarch64-linux-gnu/NetworkManager/libnm-device-plugin-wifi.so)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: nm_device_get_device_type: assertion 'NM_IS_DEVICE (self)' failed
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3875] (wlan0): using nl80211 for WiFi device control
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.3944] device (wlan0): driver supports Access Point (AP) mode
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.4009] manager: (wlan0): new 802.11 WiFi device (/org/freedesktop/NetworkManager/Devices/0)
+Jul 25 10:40:25 ubuntu-phablet NetworkManager[2359]: <info>  [1595644825.4226] device (wlan0): state change: unmanaged -> unavailable (reason 'managed') [10 20 2]
+Jul 25 10:40:25 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.UPower'
+Jul 25 10:40:25 ubuntu-phablet ofonod[2205]: parse_devices_reply: found 1st battery device: /org/freedesktop/UPower/devices/battery_axp20x_battery
+Jul 25 10:40:25 ubuntu-phablet /03mmsproxy: Cannot add proxy route, empty parameters
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.1237] device (lo): link connected
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.1324] manager: (lo): new Generic device (/org/freedesktop/NetworkManager/Devices/1)
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.1823] urfkill disappeared from the bus
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <warn>  [1595644826.1965] error poking ModemManager: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.ModemManager1 was not provided by any .service files
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.1978] ofono is now available
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.1989] bluez: use BlueZ version 5
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.2008] supplicant: wpa_supplicant running
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.2012] device (wlan0): supplicant interface state: init -> starting
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.3128] sup-iface[0x38c1c1f0,wlan0]: supports 5 scan SSIDs
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.3203] device (wlan0): supplicant interface state: starting -> ready
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.3206] manager: startup complete
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.3232] device (wlan0): state change: unavailable -> disconnected (reason 'supplicant-available') [20 30 42]
+Jul 25 10:40:26 ubuntu-phablet NetworkManager[2359]: <info>  [1595644826.3267] policy: Device 'wlan0' has no connection; scheduling activate_check in 0 seconds.
+Jul 25 10:40:26 ubuntu-phablet cron[2697]: (CRON) INFO (pidfile fd = 3)
+Jul 25 10:40:26 ubuntu-phablet cron[2698]: (CRON) STARTUP (fork ok)
+Jul 25 10:40:26 ubuntu-phablet cron[2698]: (CRON) INFO (Running @reboot jobs)
+Jul 25 10:40:27 ubuntu-phablet dundee[2794]: oFono version 1.31
+Jul 25 10:40:27 ubuntu-phablet kernel: [   13.586706] kauditd_printk_skb: 45 callbacks suppressed
+Jul 25 10:40:27 ubuntu-phablet kernel: [   13.586716] audit: type=1400 audit(1595644827.624:57): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="com.ubuntu.terminal_terminal_0.9.9" pid=2908 comm="apparmor_parser"
+Jul 25 10:40:27 ubuntu-phablet kernel: [   13.586731] audit: type=1400 audit(1595644827.660:58): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="com.ubuntu.camera_camera_3.1.3" pid=2909 comm="apparmor_parser"
+Jul 25 10:40:27 ubuntu-phablet kernel: [   13.628690] audit: type=1400 audit(1595644827.676:59): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="com.ubuntu.gallery_gallery_2.10.5" pid=2907 comm="apparmor_parser"
+Jul 25 10:40:27 ubuntu-phablet kernel: [   13.628707] audit: type=1400 audit(1595644827.704:60): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="com.ubuntu.reminders_pushHelper_0.12.1" pid=2906 comm="apparmor_parser"
+Jul 25 10:40:27 ubuntu-phablet kernel: [   13.628712] audit: type=1400 audit(1595644827.704:61): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="com.ubuntu.reminders_pushHelper_0.12.1//oxide_helper" pid=2906 comm="apparmor_parser"
+Jul 25 10:40:27 ubuntu-phablet kernel: [   13.682234] audit: type=1400 audit(1595644827.756:62): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="com.ubuntu.calculator_calculator_3.2.8" pid=2913 comm="apparmor_parser"
+Jul 25 10:40:27 ubuntu-phablet kernel: [   13.724464] audit: type=1400 audit(1595644827.764:63): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="com.ubuntu.weather_weather_5.4.0" pid=2910 comm="apparmor_parser"
+Jul 25 10:40:27 ubuntu-phablet kernel: [   13.724483] audit: type=1400 audit(1595644827.764:64): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="com.ubuntu.weather_weather_5.4.0//oxide_helper" pid=2910 comm="apparmor_parser"
+Jul 25 10:40:27 ubuntu-phablet kernel: [   13.724489] audit: type=1400 audit(1595644827.796:65): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="com.ubuntu.clock_clock_3.12.4" pid=2911 comm="apparmor_parser"
+Jul 25 10:40:27 ubuntu-phablet kernel: [   13.743835] audit: type=1400 audit(1595644827.816:66): apparmor="STATUS" operation="profile_replace" info="same as current profile, skipping" profile="unconfined" name="com.ubuntu.reminders_reminders_0.12.1" pid=2912 comm="apparmor_parser"
+Jul 25 10:40:27 ubuntu-phablet NetworkManager[2359]: <info>  [1595644827.9996] device (wlan0): supplicant interface state: ready -> inactive
+Jul 25 10:40:28 ubuntu-phablet NetworkManager[2359]: <info>  [1595644828.1165] device (wlan0): state change: disconnected -> prepare (reason 'none') [30 40 0]
+Jul 25 10:40:28 ubuntu-phablet NetworkManager[2359]: <info>  [1595644828.1200] manager: NetworkManager state is now CONNECTING
+Jul 25 10:40:28 ubuntu-phablet NetworkManager[2359]: <info>  [1595644828.1240] device (wlan0): state change: prepare -> config (reason 'none') [40 50 0]
+Jul 25 10:40:28 ubuntu-phablet NetworkManager[2359]: <info>  [1595644828.1293] device (wlan0): state change: config -> need-auth (reason 'none') [50 60 0]
+Jul 25 10:40:28 ubuntu-phablet NetworkManager[2359]: <info>  [1595644828.1530] device (wlan0): state change: need-auth -> prepare (reason 'none') [60 40 0]
+Jul 25 10:40:28 ubuntu-phablet NetworkManager[2359]: <info>  [1595644828.1560] device (wlan0): state change: prepare -> config (reason 'none') [40 50 0]
+Jul 25 10:40:28 ubuntu-phablet NetworkManager[2359]: <info>  [1595644828.1598] Config: added 'scan_ssid' value '1'
+Jul 25 10:40:28 ubuntu-phablet NetworkManager[2359]: <info>  [1595644828.1600] Config: added 'key_mgmt' value 'WPA-PSK'
+Jul 25 10:40:28 ubuntu-phablet NetworkManager[2359]: <info>  [1595644828.1602] Config: added 'auth_alg' value 'OPEN'
+Jul 25 10:40:28 ubuntu-phablet NetworkManager[2359]: <info>  [1595644828.1603] Config: added 'psk' value '<omitted>'
+Jul 25 10:40:28 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.UDisks2' (using servicehelper)
+Jul 25 10:40:28 ubuntu-phablet udisksd[2982]: udisks daemon version 2.1.7 starting
+Jul 25 10:40:28 ubuntu-phablet udisksd[2982]: Error creating directory /var/lib/udisks2: Read-only file system
+Jul 25 10:40:29 ubuntu-phablet NetworkManager[2359]: <info>  [1595644829.1129] device (wlan0): supplicant interface state: 4-way handshake -> completed
+Jul 25 10:40:29 ubuntu-phablet NetworkManager[2359]: <info>  [1595644829.1140] device (wlan0): state change: config -> ip-config (reason 'none') [50 70 0]
+Jul 25 10:40:29 ubuntu-phablet obexd[2943]: Excluding pcsuite
+Jul 25 10:40:29 ubuntu-phablet NetworkManager[2359]: <info>  [1595644829.1323] dhcp4 (wlan0): activation: beginning transaction (timeout in 45 seconds)
+Jul 25 10:40:29 ubuntu-phablet obexd[2943]: Excluding ftp
+Jul 25 10:40:29 ubuntu-phablet obexd[2943]: Excluding irmc
+Jul 25 10:40:29 ubuntu-phablet obexd[2943]: Excluding mas
+Jul 25 10:40:29 ubuntu-phablet NetworkManager[2359]: <info>  [1595644829.1667] dhcp4 (wlan0): dhclient started with pid 3016
+Jul 25 10:40:29 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.UDisks2'
+Jul 25 10:40:29 ubuntu-phablet udisksd[2982]: Acquired the name org.freedesktop.UDisks2 on the system message bus
+Jul 25 10:40:29 ubuntu-phablet dnsmasq[3031]: started, version 2.75 cache disabled
+Jul 25 10:40:29 ubuntu-phablet dnsmasq[3031]: compile time options: IPv6 GNU-getopt DBus i18n IDN DHCP DHCPv6 no-Lua TFTP conntrack ipset auth DNSSEC loop-detect inotify
+Jul 25 10:40:29 ubuntu-phablet dnsmasq[3031]: DBus support enabled: connected to system bus
+Jul 25 10:40:29 ubuntu-phablet dnsmasq[3031]: warning: no upstream servers configured
+Jul 25 10:40:29 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.RealtimeKit1' (using servicehelper)
+Jul 25 10:40:29 ubuntu-phablet NetworkManager[2359]: <info>  [1595644829.8296] device (wlan0): Activation: successful, device activated.
+Jul 25 10:40:29 ubuntu-phablet nm-dispatcher: req:2 'up' [wlan0]: new request (3 scripts)
+Jul 25 10:40:29 ubuntu-phablet nm-dispatcher: req:2 'up' [wlan0]: start running ordered scripts...
+Jul 25 10:40:29 ubuntu-phablet NetworkManager[2359]: <info>  [1595644829.8760] dnsmasq[0x38be7840]: dnsmasq appeared as :1.53
+Jul 25 10:40:29 ubuntu-phablet dnsmasq[3031]: setting upstream servers from DBus
+Jul 25 10:40:29 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.RealtimeKit1'
+Jul 25 10:40:29 ubuntu-phablet rtkit-daemon[3065]: Successfully called chroot.
+Jul 25 10:40:29 ubuntu-phablet rtkit-daemon[3065]: Successfully dropped privileges.
+Jul 25 10:40:29 ubuntu-phablet rtkit-daemon[3065]: Successfully limited resources.
+Jul 25 10:40:29 ubuntu-phablet rtkit-daemon[3065]: Running.
+Jul 25 10:40:29 ubuntu-phablet rtkit-daemon[3065]: Canary thread running.
+Jul 25 10:40:29 ubuntu-phablet rtkit-daemon[3065]: Watchdog thread running.
+Jul 25 10:40:30 ubuntu-phablet rtkit-daemon[3065]: Successfully made thread 3057 of process 3057 (n/a) owned by '32011' high priority at nice level -11.
+Jul 25 10:40:30 ubuntu-phablet rtkit-daemon[3065]: Supervising 1 threads of 1 processes of 1 users.
+Jul 25 10:40:30 ubuntu-phablet root: 02default_route_workaround: (wlan0): up: flushing routing table (proto boot)
+Jul 25 10:40:30 ubuntu-phablet rtkit-daemon[3065]: Supervising 1 threads of 1 processes of 1 users.
+Jul 25 10:40:30 ubuntu-phablet rtkit-daemon[3065]: Successfully made thread 3170 of process 3057 (n/a) owned by '32011' RT at priority 5.
+Jul 25 10:40:30 ubuntu-phablet rtkit-daemon[3065]: Supervising 2 threads of 1 processes of 1 users.
+Jul 25 10:40:30 ubuntu-phablet rtkit-daemon[3065]: Supervising 2 threads of 1 processes of 1 users.
+Jul 25 10:40:30 ubuntu-phablet rtkit-daemon[3065]: Successfully made thread 3171 of process 3057 (n/a) owned by '32011' RT at priority 5.
+Jul 25 10:40:30 ubuntu-phablet rtkit-daemon[3065]: Supervising 3 threads of 1 processes of 1 users.
+Jul 25 10:40:31 ubuntu-phablet pulseaudio[3057]: [pulseaudio] main.c: Sink sink.primary does not exist.
+Jul 25 10:40:31 ubuntu-phablet pulseaudio[3057]: [pulseaudio] main.c: Source source.primary does not exist.
+Jul 25 10:40:31 ubuntu-phablet bluetoothd[2034]: Endpoint registered: sender=:1.59 path=/MediaEndpoint/A2DPSource
+Jul 25 10:40:31 ubuntu-phablet bluetoothd[2034]: Endpoint registered: sender=:1.59 path=/MediaEndpoint/A2DPSink
+Jul 25 10:40:34 ubuntu-phablet kernel: [   20.784575] usb 3-1: new high-speed USB device number 2 using ehci-platform
+Jul 25 10:40:35 ubuntu-phablet kernel: [   20.979084] usbcore: registered new interface driver cdc_wdm
+Jul 25 10:40:35 ubuntu-phablet kernel: [   20.990810] usbcore: registered new interface driver option
+Jul 25 10:40:35 ubuntu-phablet kernel: [   20.990888] usbserial: USB Serial support registered for GSM modem (1-port)
+Jul 25 10:40:35 ubuntu-phablet kernel: [   20.991390] option 3-1:1.0: GSM modem (1-port) converter detected
+Jul 25 10:40:35 ubuntu-phablet NetworkManager[2359]: <info>  [1595644835.0846] WiFi hardware radio set enabled
+Jul 25 10:40:35 ubuntu-phablet NetworkManager[2359]: <info>  [1595644835.0849] WWAN hardware radio set enabled
+Jul 25 10:40:35 ubuntu-phablet kernel: [   21.008940] usb 3-1: GSM modem (1-port) converter now attached to ttyUSB0
+Jul 25 10:40:35 ubuntu-phablet kernel: [   21.009622] option 3-1:1.1: GSM modem (1-port) converter detected
+Jul 25 10:40:35 ubuntu-phablet kernel: [   21.013438] usb 3-1: GSM modem (1-port) converter now attached to ttyUSB1
+Jul 25 10:40:35 ubuntu-phablet kernel: [   21.013712] option 3-1:1.2: GSM modem (1-port) converter detected
+Jul 25 10:40:35 ubuntu-phablet kernel: [   21.017896] usb 3-1: GSM modem (1-port) converter now attached to ttyUSB2
+Jul 25 10:40:35 ubuntu-phablet kernel: [   21.018204] option 3-1:1.3: GSM modem (1-port) converter detected
+Jul 25 10:40:35 ubuntu-phablet kernel: [   21.024263] usb 3-1: GSM modem (1-port) converter now attached to ttyUSB3
+Jul 25 10:40:35 ubuntu-phablet kernel: [   21.032098] qmi_wwan 3-1:1.4: cdc-wdm0: USB WDM device
+Jul 25 10:40:35 ubuntu-phablet NetworkManager[2359]: nm_device_get_device_type: assertion 'NM_IS_DEVICE (self)' failed
+Jul 25 10:40:35 ubuntu-phablet kernel: [   21.041493] usbcore: registered new interface driver qmi_wwan
+Jul 25 10:40:35 ubuntu-phablet NetworkManager[2359]: <info>  [1595644835.5201] devices added (path: /sys/devices/platform/soc/1c1b000.usb/usb3/3-1/3-1:1.4/net/wwan0, iface: wwan0)
+Jul 25 10:40:35 ubuntu-phablet NetworkManager[2359]: <info>  [1595644835.5204] device added (path: /sys/devices/platform/soc/1c1b000.usb/usb3/3-1/3-1:1.4/net/wwan0, iface: wwan0): no ifupdown configuration found.
+Jul 25 10:40:35 ubuntu-phablet dbus[1932]: [system] Activating service name='com.canonical.UserMetrics' (using servicehelper)
+Jul 25 10:40:36 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'com.canonical.UserMetrics'
+Jul 25 10:40:37 ubuntu-phablet NetworkManager[2359]: <info>  [1595644837.0916] oFono modem appeared: /quectelqmi_0
+Jul 25 10:40:37 ubuntu-phablet NetworkManager[2359]: <info>  [1595644837.1087] manager: (quectelqmi_0): new Broadband device (/org/freedesktop/NetworkManager/Devices/2)
+Jul 25 10:40:37 ubuntu-phablet NetworkManager[2359]: <info>  [1595644837.1130] device (quectelqmi_0): state change: unmanaged -> unavailable (reason 'managed') [10 20 2]
+Jul 25 10:40:37 ubuntu-phablet NetworkManager[2359]: <info>  [1595644837.1188] device (quectelqmi_0): modem state 'initializing'
+Jul 25 10:40:37 ubuntu-phablet kernel: [   23.286979] kauditd_printk_skb: 3 callbacks suppressed
+Jul 25 10:40:37 ubuntu-phablet kernel: [   23.286989] audit: type=1400 audit(1595644837.360:70): apparmor="DENIED" operation="open" profile="/usr/lib/telepathy/telepathy-ofono" name="/dev/tty" pid=3375 comm="telepathy-ofono" requested_mask="r" denied_mask="r" fsuid=32011 ouid=0
+Jul 25 10:40:38 ubuntu-phablet ntpdate[3088]: step time server 91.189.91.157 offset -0.829881 sec
+Jul 25 10:40:39 ubuntu-phablet NetworkManager[2359]: <info>  [1595644839.8547] (/quectelqmi_0): found new SimManager interface
+Jul 25 10:40:40 ubuntu-phablet kernel: [   27.547094] alloc_contig_range: [b05a0, b05a8) PFNs busy
+Jul 25 10:40:40 ubuntu-phablet kernel: [   27.571370] alloc_contig_range: [b05a0, b05a8) PFNs busy
+Jul 25 10:40:40 ubuntu-phablet kernel: [   27.590705] alloc_contig_range: [b05a0, b05a8) PFNs busy
+Jul 25 10:40:42 ubuntu-phablet NetworkManager[2359]: <info>  [1595644842.5080] (/quectelqmi_0) modem is now Online
+Jul 25 10:40:42 ubuntu-phablet NetworkManager[2359]: <info>  [1595644842.5084] (/quectelqmi_0): update_modem_state: 'Attached': false 'Online': true 'IMSI': (null)
+Jul 25 10:40:42 ubuntu-phablet NetworkManager[2359]: <info>  [1595644842.5085] (quectelqmi_0): modem state changed, 'initializing' --> 'disabled' (reason: modem not ready)
+Jul 25 10:40:42 ubuntu-phablet URfkill[3579]: No configured profile found
+Jul 25 10:40:42 ubuntu-phablet URfkill[3579]: <warning> No dmi devices found.
+Jul 25 10:40:42 ubuntu-phablet URfkill[3579]: <warning> Failed to get DMI information
+Jul 25 10:40:42 ubuntu-phablet URfkill[3579]: Starting urfkilld version 0.6.0
+Jul 25 10:40:42 ubuntu-phablet URfkill[3579]: adding killswitch type 1 idx 0 soft 0 hard 0
+Jul 25 10:40:42 ubuntu-phablet kernel: [   29.545632] rfkill: input handler disabled
+Jul 25 10:40:42 ubuntu-phablet URfkill[3579]: Setting device 0 (WLAN) to unblocked
+Jul 25 10:40:42 ubuntu-phablet URfkill[3579]: set_soft: Setting WLAN to unblocked
+Jul 25 10:40:42 ubuntu-phablet URfkill[3579]: adding killswitch type 2 idx 1 soft 0 hard 0
+Jul 25 10:40:42 ubuntu-phablet URfkill[3579]: Setting device 1 (BLUETOOTH) to unblocked
+Jul 25 10:40:42 ubuntu-phablet URfkill[3579]: set_soft: Setting BLUETOOTH to unblocked
+Jul 25 10:40:42 ubuntu-phablet NetworkManager[2359]: <info>  [1595644842.9394] urfkill appeared on the bus
+Jul 25 10:40:42 ubuntu-phablet NetworkManager[2359]: <info>  [1595644842.9778] (quectelqmi_0): modem state changed, 'disabled' --> 'enabling' (reason: user preference)
+Jul 25 10:40:42 ubuntu-phablet URfkill[3579]: Modem found: '/quectelqmi_0'
+Jul 25 10:40:43 ubuntu-phablet URfkill[3579]: update_powered: creating /quectelqmi_0
+Jul 25 10:40:43 ubuntu-phablet URfkill[3579]: Setting device 100 (WWAN) to unblocked
+Jul 25 10:40:43 ubuntu-phablet URfkill[3579]: set_soft: Setting WWAN to unblocked
+Jul 25 10:40:43 ubuntu-phablet URfkill[3579]: device_changed_cb: QUALCOMM INCORPORATED QUECTEL Mobile Broadband Module
+Jul 25 10:40:46 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.timedate1' (using servicehelper)
+Jul 25 10:40:46 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.timedate1'
+Jul 25 10:40:46 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.systemd1' (using servicehelper)
+Jul 25 10:40:46 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.systemd1'
+Jul 25 10:40:47 ubuntu-phablet kernel: [   33.764721] usb0-vbus: disabling
+Jul 25 10:40:47 ubuntu-phablet kernel: [   33.764744] vcc5v0: disabling
+Jul 25 10:40:47 ubuntu-phablet kernel: [   33.764750] vconn5v0: disabling
+Jul 25 10:40:48 ubuntu-phablet dbus[1932]: [system] Activating service name='com.canonical.SystemImage' (using servicehelper)
+Jul 25 10:40:52 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'com.canonical.SystemImage'
+Jul 25 10:40:52 ubuntu-phablet rsyslogd-2007: action 'action 11' suspended, next retry is Sat Jul 25 10:41:22 2020 [v8.16.0 try http://www.rsyslog.com/e/2007 ]
+Jul 25 10:40:52 ubuntu-phablet dbus[1932]: [system] Activating service name='com.canonical.applications.Downloader' (using servicehelper)
+Jul 25 10:40:52 ubuntu-phablet wpa_supplicant[1938]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Jul 25 10:40:53 ubuntu-phablet NetworkManager[2359]: <info>  [1595644853.0184] device (wlan0): supplicant interface state: completed -> associating
+Jul 25 10:40:53 ubuntu-phablet wpa_supplicant[1938]: wlan0: Associated with 50:d4:f7:3f:16:77
+Jul 25 10:40:53 ubuntu-phablet NetworkManager[2359]: <info>  [1595644853.0617] device (wlan0): supplicant interface state: associating -> associated
+Jul 25 10:40:53 ubuntu-phablet NetworkManager[2359]: <info>  [1595644853.1477] device (wlan0): supplicant interface state: associated -> 4-way handshake
+Jul 25 10:40:53 ubuntu-phablet NetworkManager[2359]: <info>  [1595644853.1500] device (wlan0): supplicant interface state: 4-way handshake -> completed
+Jul 25 10:40:53 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'com.canonical.applications.Downloader'
+Jul 25 10:41:35 ubuntu-phablet wpa_supplicant[1938]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=BEACON_HINT type=UNKNOWN
+Jul 25 10:41:35 ubuntu-phablet rsyslogd-2007: action 'action 11' suspended, next retry is Sat Jul 25 10:42:05 2020 [v8.16.0 try http://www.rsyslog.com/e/2007 ]
+Jul 25 10:42:25 ubuntu-phablet rsyslogd-2007: action 'action 11' suspended, next retry is Sat Jul 25 10:42:55 2020 [v8.16.0 try http://www.rsyslog.com/e/2007 ]
+Jul 25 10:42:38 ubuntu-phablet wpa_supplicant[1938]: wlan0: Association request to the driver failed
+Jul 25 10:42:39 ubuntu-phablet wpa_supplicant[1938]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=CORE type=WORLD
+Jul 25 10:42:39 ubuntu-phablet NetworkManager[2359]: <info>  [1595644959.0180] device (wlan0): supplicant interface state: completed -> disconnected
+Jul 25 10:42:39 ubuntu-phablet NetworkManager[2359]: <info>  [1595644959.1084] device (wlan0): supplicant interface state: disconnected -> scanning
+Jul 25 10:42:40 ubuntu-phablet wpa_supplicant[1938]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=BEACON_HINT type=UNKNOWN
+Jul 25 10:42:41 ubuntu-phablet NetworkManager[2359]: <info>  [1595644961.4179] device (wlan0): supplicant interface state: scanning -> associating
+Jul 25 10:42:41 ubuntu-phablet wpa_supplicant[1938]: wlan0: Associated with 50:d4:f7:3f:16:77
+Jul 25 10:42:41 ubuntu-phablet NetworkManager[2359]: <info>  [1595644961.6026] device (wlan0): supplicant interface state: associating -> associated
+Jul 25 10:42:41 ubuntu-phablet NetworkManager[2359]: <info>  [1595644961.6945] device (wlan0): supplicant interface state: associated -> 4-way handshake
+Jul 25 10:42:41 ubuntu-phablet NetworkManager[2359]: <info>  [1595644961.7000] device (wlan0): supplicant interface state: 4-way handshake -> completed
+Jul 25 10:42:44 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.systemd1' (using servicehelper)
+Jul 25 10:42:44 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.systemd1'
+Jul 25 10:43:15 ubuntu-phablet rsyslogd-2007: action 'action 11' suspended, next retry is Sat Jul 25 10:43:45 2020 [v8.16.0 try http://www.rsyslog.com/e/2007 ]
+Jul 25 10:43:15 ubuntu-phablet kernel: [  182.001378] EXT4-fs (mmcblk2p9): re-mounted. Opts: (null)
+Jul 25 10:45:01 ubuntu-phablet rsyslogd-2007: action 'action 11' suspended, next retry is Sat Jul 25 10:45:31 2020 [v8.16.0 try http://www.rsyslog.com/e/2007 ]
+Jul 25 10:45:01 ubuntu-phablet CRON[7594]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)
+Jul 25 10:46:13 ubuntu-phablet rsyslogd-2007: action 'action 11' suspended, next retry is Sat Jul 25 10:46:43 2020 [v8.16.0 try http://www.rsyslog.com/e/2007 ]
+Jul 25 10:46:16 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.systemd1' (using servicehelper)
+Jul 25 10:46:16 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.systemd1'
+Jul 25 10:46:33 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.systemd1' (using servicehelper)
+Jul 25 10:46:33 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.systemd1'
+Jul 25 10:50:20 ubuntu-phablet rsyslogd-2007: action 'action 11' suspended, next retry is Sat Jul 25 10:50:50 2020 [v8.16.0 try http://www.rsyslog.com/e/2007 ]
+Jul 25 10:50:20 ubuntu-phablet dbus[1932]: [system] Activating service name='org.freedesktop.systemd1' (using servicehelper)
+Jul 25 10:50:20 ubuntu-phablet dbus[1932]: [system] Successfully activated service 'org.freedesktop.systemd1'
