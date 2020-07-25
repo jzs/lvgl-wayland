@@ -1,0 +1,146 @@
+[2020-07-25:10:42:14.222] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:14.222] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:14.223] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(InvertedLandscapeOrientation) handled
+[2020-07-25:10:42:14.686] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:14.686] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:14.687] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(PortraitOrientation) handled
+[2020-07-25:10:42:15.154] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:15.154] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:15.155] Unknown orientation.
+[2020-07-25:10:42:16.078] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:16.082] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:16.082] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(PortraitOrientation) handled
+[2020-07-25:10:42:16.545] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:16.545] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:16.545] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(LandscapeOrientation) handled
+[2020-07-25:10:42:17.215] qtmir.applications: Application["com.ubuntu.terminal_terminal"]::Application()
+[2020-07-25:10:42:17.216] toplevelwindowmodel: prependPlaceholder(com.ubuntu.terminal_terminal)
+[2020-07-25:10:42:17.317] qtmir.mir: SessionAuthorizer::connection_is_allowed - this= SessionAuthorizer(0xffff9c132ea0) pid= 5730
+[2020-07-25:10:42:17.548] file:///usr/share/unity8//Stage/Stage.qml:1877:17: QML WindowInfoItem: Binding loop detected for property "maxWidth"
+[2020-07-25:10:42:17.632] toplevelwindowmodel: setFocusedWindow(Window[0x3a6430d0, id=1, null])
+[2020-07-25:10:42:17.633] toplevelwindowmodel: prependSurfaceHelper after (index=0,appId=com.ubuntu.terminal_terminal,surface=0x0,id=1)
+[2020-07-25:10:42:17.638] qtmir.sessions: Wakelock acquired "1"
+[2020-07-25:10:42:17.638] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:17.638] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:17.673] Unknown orientation.
+[2020-07-25:10:42:17.674] qtmir.sessions: TaskController::onSessionStarting - sessionName=
+[2020-07-25:10:42:17.675] qtmir.applications: Application["com.ubuntu.terminal_terminal"]::addSession(session=qtmir::Session(0x39e2ddf0))
+[2020-07-25:10:42:17.939] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:17.943] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:17.944] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(PortraitOrientation) handled
+[2020-07-25:10:42:18.864] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:18.864] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:18.864] Unknown orientation.
+[2020-07-25:10:42:19.578] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::MirSurface(type=freestyle,state=restored,size=(640,480),parentSurface=QObject(0x0))
+[2020-07-25:10:42:19.579] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::activate()
+[2020-07-25 10:42:19.581110] < -warning- > mirserver: WaylandInputDispatcher::input_consumed() got non-input event type 11
+[2020-07-25:10:42:19.587] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::registerView(971722704) after=1
+[2020-07-25:10:42:19.590] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::setKeymap("us")
+[2020-07-25:10:42:19.591] toplevelwindowmodel: prependSurface appId=com.ubuntu.terminal_terminal surface=qtmir::MirSurface(0x3a76c740), filling out placeholder. after: (index=0,appId=com.ubuntu.terminal_terminal,surface=0x3a76c740,id=1)
+[2020-07-25:10:42:19.591] toplevelwindowmodel: setFocusedWindow(0x0)
+[2020-07-25:10:42:19.591] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::setFocused(true)
+[2020-07-25:10:42:19.595] toplevelwindowmodel: setFocusedWindow(Window[0x3a6430d0, id=1, MirSurface[0x3a76c740,"ubuntu-terminal-app"]])
+[2020-07-25:10:42:19.695] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::requestState(restored)
+[2020-07-25:10:42:19.794] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:19.798] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:19.799] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(PortraitOrientation) handled
+[2020-07-25:10:42:20.266] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:20.266] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:20.267] Unknown orientation.
+[2020-07-25:10:42:20.488] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::setReady()
+[2020-07-25:10:42:20.488] qtmir.applications: Application["com.ubuntu.terminal_terminal"]::setInternalState(state=Running)
+[2020-07-25:10:42:20.491] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::updateExposure(true)
+[2020-07-25:10:42:21.830] qtmir.surfaces: MirSurface[0x3b19a190,""]::MirSurface(type=input Method,state=restored,size=(640,480),parentSurface=QObject(0x0))
+[2020-07-25:10:42:21.831] qtmir.surfaces: MirSurface[0x3b19a190,""]::registerView(963828240) after=1
+[2020-07-25:10:42:22.125] qtmir.surfaces: MirSurface[0x3b19a190,""]::setReady()
+[2020-07-25:10:42:22.125] qtmir.surfaces: MirSurface[0x3b19a190,""]::updateExposure(true)
+[2020-07-25:10:42:23.526] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:23.527] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:23.527] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(PortraitOrientation) handled
+[2020-07-25:10:42:24.937] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:24.937] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:24.937] Unknown orientation.
+[2020-07-25:10:42:25.326] qml: updateLightState: onBatteryLevelChanged, indicatorState: INDICATOR_OFF, supportsMultiColorLed: true, hasMessages: false, icon: battery-full-symbolic, displayStatus: 1, deviceState: discharging, batteryLevel: 73
+[2020-07-25:10:42:25.401] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:25.401] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:25.401] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(PortraitOrientation) handled
+[2020-07-25:10:42:28.190] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:28.191] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:28.191] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(LandscapeOrientation) handled
+[2020-07-25:10:42:28.650] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:42:28.651] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:42:28.651] Unknown orientation.
+[2020-07-25:10:43:22.994] [PERFORMANCE]: Last frame took 148 ms to render.
+[2020-07-25:10:43:24.210] qtmir.applications: Application["com.ubuntu.filemanager_filemanager"]::Application()
+[2020-07-25:10:43:24.210] toplevelwindowmodel: prependPlaceholder(com.ubuntu.filemanager_filemanager)
+[2020-07-25:10:43:24.381] qtmir.applications: Application["com.ubuntu.terminal_terminal"]::setRequestedState(requestedState=suspended)
+[2020-07-25:10:43:24.382] qtmir.applications: Application["com.ubuntu.terminal_terminal"]::suspend()
+[2020-07-25:10:43:24.382] qtmir.applications: Application["com.ubuntu.terminal_terminal"]::setInternalState(state=SuspendingWaitSession)
+[2020-07-25:10:43:24.383] toplevelwindowmodel: setFocusedWindow(Window[0x39d47110, id=3, null])
+[2020-07-25:10:43:24.388] toplevelwindowmodel: prependSurfaceHelper after (index=0,appId=com.ubuntu.filemanager_filemanager,surface=0x0,id=3),(index=1,appId=com.ubuntu.terminal_terminal,surface=0x3a76c740,id=1)
+[2020-07-25:10:43:24.393] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::setFocused(false)
+[2020-07-25:10:43:24.605] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::updateExposure(false)
+[2020-07-25:10:43:24.680] qtmir.surfaces: MirSurface[0x3b19a190,""]::setLive(false)
+[2020-07-25:10:43:24.681] qtmir.surfaces: MirSurface[0x3b19a190,""]::unregisterView(963828240) after=0 live=false
+[2020-07-25:10:43:24.681] qtmir.surfaces: MirSurface[0x3b19a190,""]::updateExposure(false)
+[2020-07-25:10:43:24.683] qtmir.surfaces: MirSurface[0x3b19a190,""]::~MirSurface() viewCount=0
+[2020-07-25:10:43:25.679] qtmir.mir: SessionAuthorizer::connection_is_allowed - this= SessionAuthorizer(0xffff9c132ea0) pid= 6573
+[2020-07-25:10:43:25.707] qtmir.sessions: TaskController::onSessionStarting - sessionName=
+[2020-07-25:10:43:25.707] qtmir.applications: Application["com.ubuntu.filemanager_filemanager"]::addSession(session=qtmir::Session(0x39e14fd0))
+[2020-07-25:10:43:25.811] qtmir.applications: Application["com.ubuntu.terminal_terminal"]::setInternalState(state=SuspendingWaitProcess)
+[2020-07-25:10:43:25.939] qtmir.applications: Application["com.ubuntu.terminal_terminal"]::setInternalState(state=Suspended)
+[2020-07-25:10:43:26.562] qtmir.surfaces: MirSurface[0x39e341b0,"com.ubuntu.filemanager_filemanager"]::MirSurface(type=freestyle,state=restored,size=(720,1398),parentSurface=QObject(0x0))
+[2020-07-25:10:43:26.569] qtmir.surfaces: MirSurface[0x39e341b0,"com.ubuntu.filemanager_filemanager"]::activate()
+[2020-07-25 10:43:26.570035] < -warning- > mirserver: WaylandInputDispatcher::input_consumed() got non-input event type 11
+[2020-07-25:10:43:26.578] qtmir.surfaces: MirSurface[0x39e341b0,"com.ubuntu.filemanager_filemanager"]::registerView(972102112) after=1
+[2020-07-25:10:43:26.580] qtmir.surfaces: MirSurface[0x39e341b0,"com.ubuntu.filemanager_filemanager"]::setKeymap("us")
+[2020-07-25:10:43:26.580] toplevelwindowmodel: prependSurface appId=com.ubuntu.filemanager_filemanager surface=qtmir::MirSurface(0x39e341b0), filling out placeholder. after: (index=0,appId=com.ubuntu.filemanager_filemanager,surface=0x39e341b0,id=3),(index=1,appId=com.ubuntu.terminal_terminal,surface=0x3a76c740,id=1)
+[2020-07-25:10:43:26.580] toplevelwindowmodel: setFocusedWindow(0x0)
+[2020-07-25:10:43:26.581] qtmir.surfaces: MirSurface[0x39e341b0,"com.ubuntu.filemanager_filemanager"]::setFocused(true)
+[2020-07-25:10:43:26.583] toplevelwindowmodel: setFocusedWindow(Window[0x39d47110, id=3, MirSurface[0x39e341b0,""]])
+[2020-07-25:10:43:26.670] qtmir.surfaces: MirSurface[0x39e341b0,"com.ubuntu.filemanager_filemanager"]::requestState(restored)
+[2020-07-25:10:44:25.343] qml: updateLightState: onBatteryLevelChanged, indicatorState: INDICATOR_OFF, supportsMultiColorLed: true, hasMessages: false, icon: battery-full-symbolic, displayStatus: 1, deviceState: discharging, batteryLevel: 72
+[2020-07-25:10:45:57.271] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:45:57.271] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:45:57.271] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(InvertedLandscapeOrientation) handled
+[2020-07-25:10:45:57.730] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:45:57.730] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:45:57.731] Unknown orientation.
+[2020-07-25:10:45:58.196] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:45:58.196] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:45:58.197] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(PortraitOrientation) handled
+[2020-07-25:10:45:58.392] toplevelwindowmodel: setRootFocus(false), surfaceManagerBusy is false
+[2020-07-25:10:45:58.392] toplevelwindowmodel: setFocusedWindow(Window[0x3966ae20, id=0, null])
+[2020-07-25:10:45:58.407] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::updateExposure(true)
+[2020-07-25:10:45:58.412] toplevelwindowmodel: setRootFocus(true), surfaceManagerBusy is false
+[2020-07-25:10:45:58.415] qtmir.surfaces: MirSurface[0x39e341b0,"com.ubuntu.filemanager_filemanager"]::setFocused(false)
+[2020-07-25:10:45:58.600] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::activate()
+[2020-07-25 10:45:58.601611] < -warning- > mirserver: WaylandInputDispatcher::input_consumed() got non-input event type 11
+[2020-07-25:10:45:58.607] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::updateExposure(false)
+[2020-07-25:10:45:58.608] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::setFocused(true)
+[2020-07-25:10:45:58.616] qtmir.applications: Application["com.ubuntu.terminal_terminal"]::setRequestedState(requestedState=running)
+[2020-07-25:10:45:58.617] qtmir.applications: Application["com.ubuntu.terminal_terminal"]::resume()
+[2020-07-25:10:45:58.632] qtmir.applications: Application["com.ubuntu.terminal_terminal"]::setInternalState(state=Running)
+[2020-07-25:10:45:58.650] qtmir.surfaces: MirSurface[0x3a76c740,"com.ubuntu.terminal_terminal"]::updateExposure(true)
+[2020-07-25:10:45:58.653] qtmir.applications: Application["com.ubuntu.filemanager_filemanager"]::setRequestedState(requestedState=suspended)
+[2020-07-25:10:45:58.654] toplevelwindowmodel: move after (index=0,appId=com.ubuntu.terminal_terminal,surface=0x3a76c740,id=1),(index=1,appId=com.ubuntu.filemanager_filemanager,surface=0x39e341b0,id=3)
+[2020-07-25:10:45:58.695] toplevelwindowmodel: setFocusedWindow(Window[0x3a6430d0, id=1, MirSurface[0x3a76c740,"phablet@ubuntu-phablet: ~"]])
+[2020-07-25:10:46:02.390] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:46:02.391] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:46:02.392] Unknown orientation.
+[2020-07-25:10:46:02.866] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:46:02.866] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:46:02.866] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(PortraitOrientation) handled
+[2020-07-25:10:46:05.040] qtmir.surfaces: MirSurface[0x3afc29e0,""]::MirSurface(type=input Method,state=restored,size=(640,480),parentSurface=QObject(0x0))
+[2020-07-25:10:46:05.041] qtmir.surfaces: MirSurface[0x3afc29e0,""]::registerView(963828240) after=1
+[2020-07-25:10:46:05.068] qtmir.surfaces: MirSurface[0x3afc29e0,""]::setReady()
+[2020-07-25:10:46:05.068] qtmir.surfaces: MirSurface[0x3afc29e0,""]::updateExposure(true)
+[2020-07-25:10:46:15.390] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:46:15.390] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:46:15.391] Unknown orientation.
+[2020-07-25:10:46:16.322] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:46:16.323] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:46:16.323] qtmir.sensor: Screen::customEvent - new orientation Qt::ScreenOrientation(LandscapeOrientation) handled
+[2020-07-25:10:46:16.784] qtmir.sensor: OrientationSensor::readingChanged
+[2020-07-25:10:46:16.784] qtmir.sensor: Screen::onOrientationReadingChanged
+[2020-07-25:10:46:16.785] Unknown orientation.
