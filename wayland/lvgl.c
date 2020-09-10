@@ -1,66 +1,42 @@
-//  Simple port of LVGL to Wayland on PinePhone with Ubuntu Touch. 
-//  Renders UI controls but touch input not handled yet.
-//  Bundled source files: shader.c, texture.c, util.c, util.h
-//  To build and run on PinePhone, see lvgl.sh.
-//  Sample log: logs/lvgl.log 
-//  Based on https://jan.newmarch.name/Wayland/EGL/
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <assert.h>
+#include <stdio.h>
+#include <string.h>
 #include <wayland-client.h>
-#include <wayland-server.h>
-#include <wayland-client-protocol.h>
 #include <wayland-egl.h>
+#include "xdg-shell-protocol.h"
 #include <EGL/egl.h>
-#include <GLES2/gl2.h>
 #include "../lvgl.h"
 #include "../demo/lv_demo_widgets.h"
 #include "lv_port_disp.h"
 #include "util.h"
-
-/// Local Functions
-static void get_server_references(void);
-static void create_opaque_region(void);
-static void create_window(void);
-static void init_egl(void);
-
+//#include <GLES2/gl2.h>
 /// Dimensions of the OpenGL region to be rendered
 static int WIDTH  = LV_HOR_RES_MAX;
 static int HEIGHT = LV_VER_RES_MAX;
 
-/// Wayland Interfaces
-static struct wl_display       *display;       //  Wayland Display
-static struct wl_compositor    *compositor;    //  Wayland Compositor
-static struct wl_surface       *surface;       //  Wayland Surface
-static struct wl_egl_window    *egl_window;    //  Wayland EGL Window
-static struct wl_region        *region;        //  Wayland Region
-static struct wl_shell         *shell;         //  Wayland Shell
-static struct wl_shell_surface *shell_surface; //  Wayland Shell Surface
+struct app_state {
+	struct wl_display    *display;
+	struct wl_registry   *registry;
+	struct wl_compositor *compositor;
+	struct xdg_wm_base   *xdg_wm_base;
 
-/// Wayland EGL Interfaces for OpenGL Rendering
-static EGLDisplay egl_display;  //  EGL Display
-static EGLConfig  egl_conf;     //  EGL Configuration
-static EGLSurface egl_surface;  //  EGL Surface
-static EGLContext egl_context;  //  EGL Context
+	struct wl_surface   *surface;
+	struct xdg_surface  *xdg_surface;
+	struct xdg_toplevel *xdg_toplevel;
 
-////////////////////////////////////////////////////////////////////
-//  Render OpenGL
+	struct wl_egl_window *egl_window;
 
+	/// Wayland EGL Interfaces for OpenGL Rendering
+	EGLDisplay egl_display;  //  EGL Display
+	EGLConfig  egl_conf;     //  EGL Configuration
+	EGLSurface egl_surface;  //  EGL Surface
+	EGLContext egl_context;  //  EGL Context
+};
+
+// lvgl stuff -----------------------------
 /// Exported by texture.c
 void Init(ESContext *esContext);
 void Draw(ESContext *esContext);
-
-/// Render a Button Widget and a Label Widget
-static void render_widgets(void) {
-    puts("Rendering widgets...");
-    lv_obj_t * btn = lv_btn_create(lv_scr_act(), NULL);     //  Add a button the current screen
-    lv_obj_set_pos(btn, 10, 10);                            //  Set its position
-    lv_obj_set_size(btn, 120, 50);                          //  Set its size
-
-    lv_obj_t * label = lv_label_create(btn, NULL);          //  Add a label to the button
-    lv_label_set_text(label, "Button");                     //  Set the labels text
-}
 
 /// Render the OpenGL ES2 display
 static void render_display() {
@@ -92,66 +68,123 @@ static void render_display() {
     glFlush();
 }
 
-////////////////////////////////////////////////////////////////////
-//  Main
 
-/// Connect to Wayland Compositor and render OpenGL graphics
-int main(int argc, char **argv) {
-    //  Get interfaces for Wayland Compositor and Wayland Shell
-    get_server_references();
-    assert(display != NULL);     //  Failed to get Wayland Display
-    assert(compositor != NULL);  //  Failed to get Wayland Compositor
-    assert(shell != NULL);       //  Failed to get Wayland Shell
+// xdg_surface_listener
+static void
+xdg_surface_configure(void *data,
+        struct xdg_surface *xdg_surface, uint32_t serial)
+{
+    struct app_state *state = data;
+    xdg_surface_ack_configure(xdg_surface, serial);
 
-    //  Create a Wayland Surface for rendering our app
-    surface = wl_compositor_create_surface(compositor);
-    assert(surface != NULL);  //  Failed to create Wayland Surface
-
-    //  Get the Wayland Shell Surface for rendering our app window
-    shell_surface = wl_shell_get_shell_surface(shell, surface);
-    assert(shell_surface != NULL);
-
-    //  Set the Shell Surface as top level
-    wl_shell_surface_set_toplevel(shell_surface);
-
-    //  Create the Wayland Region for rendering OpenGL graphics
-    create_opaque_region();
-
-    //  Create the EGL Context for rendering OpenGL graphics
-    init_egl();
-
-    //  Create the EGL Window and render OpenGL graphics
-    create_window();
-
-    //  Handle all Wayland Events in the Event Loop
-    while (wl_display_dispatch(display) != -1) {}
-
-    //  Disconnect from the Wayland Display
-    wl_display_disconnect(display);
-    puts("Disconnected from display");
-    return 0;
+	// Fix this...
+    //struct wl_buffer *buffer = draw_frame(state);
+    //wl_surface_attach(state->surface, buffer, 0, 0);
+    //wl_surface_commit(state->surface);
 }
 
-////////////////////////////////////////////////////////////////////
-//  Wayland EGL
+const static struct xdg_surface_listener xdg_surface_listener = {
+    .configure = xdg_surface_configure,
+};
 
-//  Create the Wayland Region for rendering OpenGL graphics
-static void create_opaque_region(void) {
-    puts("Creating opaque region...");
-
-    //  Create a Wayland Region
-    region = wl_compositor_create_region(compositor);
-    assert(region != NULL);  //  Failed to create EGL Region
-
-    //  Set the dimensions of the Wayland Region
-    wl_region_add(region, 0, 0, WIDTH, HEIGHT);
-
-    //  Add the Region to the Wayland Surface
-    wl_surface_set_opaque_region(surface, region);
+// xdg_wm_base_listener
+static void
+xdg_wm_base_ping(void *data, struct xdg_wm_base *xdg_wm_base, uint32_t serial)
+{
+    xdg_wm_base_pong(xdg_wm_base, serial);
 }
+
+const static struct xdg_wm_base_listener xdg_wm_base_listener = {
+    .ping = xdg_wm_base_ping,
+};
+
+// Registry listener
+
+static void
+registry_handle_global(void *data, struct wl_registry *registry,
+                uint32_t name, const char *interface, uint32_t version)
+{
+	printf("interface: '%s', version: %d, name: %d\n",
+			interface, version, name);
+
+	struct app_state *state = data;
+	if (strcmp(interface, wl_compositor_interface.name) == 0) {
+		state->compositor = wl_registry_bind(
+				state->registry, name, &wl_compositor_interface, 4);
+    } else if (strcmp(interface, xdg_wm_base_interface.name) == 0) {
+        state->xdg_wm_base = wl_registry_bind(
+                state->registry, name, &xdg_wm_base_interface, 1);
+        xdg_wm_base_add_listener(state->xdg_wm_base,
+                &xdg_wm_base_listener, state);
+    }
+
+}
+
+static void
+registry_handle_global_remove(void *data, struct wl_registry *registry,
+		uint32_t name)
+{
+	// Left blank deliberately
+}
+
+
+static const struct wl_registry_listener
+registry_listener = {
+	.global = registry_handle_global,
+	.global_remove = registry_handle_global_remove,
+};
+
+// Local functions
+void init_egl(struct app_state *state);
+void create_window(struct app_state *state);
+
+// Main
+
+int
+main(int argc, char *argv[])
+{
+	struct app_state state = { 0 };
+
+	state.display = wl_display_connect(NULL);
+	if (!state.display) {
+		fprintf(stderr, "Failed to connect to Wayland display.\n");
+		return 1;
+	}
+
+	fprintf(stderr, "Connection established");
+
+	// Registry
+	state.registry = wl_display_get_registry(state.display);
+	wl_registry_add_listener(state.registry, &registry_listener, &state);
+	wl_display_roundtrip(state.display);
+
+	state.surface = wl_compositor_create_surface(state.compositor);
+	state.xdg_surface = xdg_wm_base_get_xdg_surface(
+			state.xdg_wm_base, state.surface);
+	xdg_surface_add_listener(state.xdg_surface, &xdg_surface_listener, &state);
+	state.xdg_toplevel = xdg_surface_get_toplevel(state.xdg_surface);
+	xdg_toplevel_set_title(state.xdg_toplevel, "Hello world");
+	wl_surface_commit(state.surface);
+
+	wl_display_dispatch(state.display);
+
+	init_egl(&state);
+
+	create_window(&state);
+
+	while (wl_display_dispatch(state.display)) {
+		// something.
+    	printf("loopmajor: ");
+	}
+	
+	wl_display_disconnect(state.display);
+	return 0;
+}
+
+
 
 //  Create the EGL Context for rendering OpenGL graphics
-static void init_egl(void) {
+void init_egl(struct app_state *state) {
     puts("Init EGL...");
 
     //  Attributes for our EGL Display
@@ -169,125 +202,62 @@ static void init_egl(void) {
     };
 
     //  Get the EGL Display
-    egl_display = eglGetDisplay((EGLNativeDisplayType) display);
-    assert(egl_display != EGL_NO_DISPLAY);  //  Failed to get EGL Display
+    state->egl_display = eglGetDisplay((EGLNativeDisplayType) state->display);
+    assert(state->egl_display != EGL_NO_DISPLAY);  //  Failed to get EGL Display
 
     //  Init the EGL Display
     EGLint major, minor;
-    EGLBoolean egl_init = eglInitialize(egl_display, &major, &minor);
+    EGLBoolean egl_init = eglInitialize(state->egl_display, &major, &minor);
     assert(egl_init);  //  Failed to init EGL Display
     printf("EGL major: %d, minor %d\n", major, minor);
 
+
     //  Get the EGL Configurations
     EGLint count, n;
-    eglGetConfigs(egl_display, NULL, 0, &count);
+    eglGetConfigs(state->egl_display, NULL, 0, &count);
     printf("EGL has %d configs\n", count);
     EGLConfig *configs = calloc(count, sizeof *configs);
-    eglChooseConfig(egl_display, config_attribs,
+    eglChooseConfig(state->egl_display, config_attribs,
         configs, count, &n);
 
     //  Choose the first EGL Configuration
     for (int i = 0; i < n; i++) {
         EGLint size;
-        eglGetConfigAttrib(egl_display, configs[i], EGL_BUFFER_SIZE, &size);
+        eglGetConfigAttrib(state->egl_display, configs[i], EGL_BUFFER_SIZE, &size);
         printf("Buffer size for config %d is %d\n", i, size);
-        eglGetConfigAttrib(egl_display, configs[i], EGL_RED_SIZE, &size);
+        eglGetConfigAttrib(state->egl_display, configs[i], EGL_RED_SIZE, &size);
         printf("Red size for config %d is %d\n", i, size);
-        egl_conf = configs[i];
+        state->egl_conf = configs[i];
         break;
     }
-    assert(egl_conf != NULL);  //  Failed to get EGL Configuration
+    assert(state->egl_conf != NULL);  //  Failed to get EGL Configuration
 
     //  Create the EGL Context based on the EGL Display and Configuration
-    egl_context = eglCreateContext(egl_display, egl_conf,
+    state->egl_context = eglCreateContext(state->egl_display, state->egl_conf,
         EGL_NO_CONTEXT, context_attribs);
-    assert(egl_context != NULL);  //  Failed to create EGL Context
+    assert(state->egl_context != NULL);  //  Failed to create EGL Context
 }
 
 //  Create the EGL Window and render OpenGL graphics
-static void create_window(void) {
+void create_window(struct app_state *state) {
     //  Create an EGL Window from a Wayland Surface 
-    egl_window = wl_egl_window_create(surface, WIDTH, HEIGHT);
-    assert(egl_window != EGL_NO_SURFACE);  //  Failed to create OpenGL Window
+    state->egl_window = wl_egl_window_create(state->surface, WIDTH, HEIGHT);
+    assert(state->egl_window != EGL_NO_SURFACE);  //  Failed to create OpenGL Window
 
     //  Create an OpenGL Window Surface for rendering
-    egl_surface = eglCreateWindowSurface(egl_display, egl_conf,
-        egl_window, NULL);
-    assert(egl_surface != NULL);  //  Failed to create OpenGL Window Surface
+    state->egl_surface = eglCreateWindowSurface(state->egl_display, state->egl_conf,
+        state->egl_window, NULL);
+    assert(state->egl_surface != NULL);  //  Failed to create OpenGL Window Surface
 
     //  Set the current rendering surface
-    EGLBoolean madeCurrent = eglMakeCurrent(egl_display, egl_surface,
-        egl_surface, egl_context);
+    EGLBoolean madeCurrent = eglMakeCurrent(state->egl_display, state->egl_surface,
+        state->egl_surface, state->egl_context);
     assert(madeCurrent);  //  Failed to set rendering surface
 
     //  Render the display
     render_display();
 
     //  Swap the display buffers to make the display visible
-    EGLBoolean swappedBuffers = eglSwapBuffers(egl_display, egl_surface);
+    EGLBoolean swappedBuffers = eglSwapBuffers(state->egl_display, state->egl_surface);
     assert(swappedBuffers);  //  Failed to swap display buffers
-}
-
-////////////////////////////////////////////////////////////////////
-//  Wayland Registry
-
-static void global_registry_handler(void *data, struct wl_registry *registry, uint32_t id,
-    const char *interface, uint32_t version);
-static void global_registry_remover(void *data, struct wl_registry *registry, uint32_t id);
-
-/// Callbacks for interfaces returned by Wayland Service
-static const struct wl_registry_listener registry_listener = {
-    global_registry_handler,
-    global_registry_remover
-};
-
-/// Connect to Wayland Service and fetch the interfaces for Wayland Compositor and Wayland Shell
-static void get_server_references(void) {
-    puts("Getting server references...");
-
-    //  Connect to the Wayland Service
-    display = wl_display_connect(NULL);
-    if (display == NULL) {
-        fprintf(stderr, "Failed to connect to display\n");
-        exit(1);
-    }
-    puts("Connected to display");
-
-    //  Get the Wayland Registry
-    struct wl_registry *registry = wl_display_get_registry(display);
-    assert(registry != NULL);  //  Failed to get Wayland Registry
-
-    //  Add Registry Callbacks to handle interfaces returned by Wayland Service
-    wl_registry_add_listener(registry, &registry_listener, NULL);
-
-    //  Wait for Registry Callbacks to fetch Wayland Interfaces
-    wl_display_dispatch(display);
-    wl_display_roundtrip(display);
-
-    //  We should have received interfaces for Wayland Compositor and Wayland Shell
-    assert(compositor != NULL);  //  Failed to get Wayland Compositor
-    assert(shell != NULL);       //  Failed to get Wayland Shell
-}
-
-/// Callback for interfaces returned by Wayland Service
-static void global_registry_handler(void *data, struct wl_registry *registry, uint32_t id,
-    const char *interface, uint32_t version) {
-    printf("Got interface %s id %d\n", interface, id);
-
-    if (strcmp(interface, "wl_compositor") == 0) {
-        //  Bind to Wayland Compositor Interface
-        compositor = wl_registry_bind(registry, id,
-            &wl_compositor_interface,   //  Interface Type
-            1);                         //  Interface Version
-    } else if (strcmp(interface, "wl_shell") == 0){
-        //  Bind to Wayland Shell Interface
-        shell = wl_registry_bind(registry, id,
-            &wl_shell_interface,        //  Interface Type
-            1);                         //  Interface Version
-    }
-}
-
-/// Callback for removed interfaces
-static void global_registry_remover(void *data, struct wl_registry *registry, uint32_t id) {
-    printf("Removed interface id %d\n", id);
 }

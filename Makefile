@@ -10,7 +10,8 @@ WAYLAND_CSRCS := \
 	wayland/lv_port_disp.c \
 	wayland/shader.c \
 	wayland/texture.c \
-	wayland/util.c
+	wayland/util.c \
+	wayland/xdg-shell-protocol.c
 
 TARGETS:= wayland/lvgl
 
@@ -40,10 +41,16 @@ OBJ    := \
 
 .PHONY: all clean
 
-all: $(TARGETS)
+all: gen-wayland $(TARGETS)
+
+gen-wayland:
+	wayland-scanner private-code /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml wayland/xdg-shell-protocol.c
+	wayland-scanner client-header /usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml wayland/xdg-shell-protocol.h
 
 clean:
 	rm -f $(TARGETS) $(OBJ)
+	rm -f wayland/xdg-shell-protocol.c
+	rm -f wayland/xdg-shell-protocol.h
 
 $(OBJ): %.o : %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CCFLAGS)
